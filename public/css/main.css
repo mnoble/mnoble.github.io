@@ -1,0 +1,91 @@
+body {
+  background: #ebedf0; }
+  body #wrap {
+    width: 860px;
+    margin: 0 auto; }
+    body #wrap h1 {
+      margin: 0; }
+      body #wrap h1 a {
+        font: bold 140px "Futura", "Century Gothic" serif;
+        font-weight: bold;
+        letter-spacing: -30px;
+        text-decoration: none;
+        color: #747981;
+        text-shadow: 1px 1px 0 #f4f4f4; }
+      body #wrap h1 p {
+        margin: 0;
+        float: left; }
+      body #wrap h1 img {
+        float: left;
+        margin: 56px 0 0 30px; }
+    body #wrap #content p, body #wrap #content li {
+      font: 18px "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+      color: #666666;
+      text-shadow: 1px 1px 0 #f8f8f8;
+      line-height: 170%; }
+    body #wrap #content #articles {
+      width: 535px;
+      float: left; }
+      body #wrap #content #articles .article {
+        margin-bottom: 50px; }
+        body #wrap #content #articles .article h2 {
+          margin: 0 0 10px 0;
+          font-weight: normal;
+          font-size: 36px; }
+          body #wrap #content #articles .article h2 a {
+            color: #a40713;
+            text-decoration: none; }
+          body #wrap #content #articles .article h2 a:hover {
+            color: #111111; }
+        body #wrap #content #articles .article p.date {
+          margin: 0;
+          font-size: 13px;
+          color: #333333; }
+        body #wrap #content #articles .article p {
+          margin: 0 0 20px 0; }
+      body #wrap #content #articles .archive-article {
+        line-height: 0;
+        list-style: none;
+        margin: 5px 0; }
+        body #wrap #content #articles .archive-article p {
+          margin: 0; }
+        body #wrap #content #articles .archive-article p.date {
+          float: left;
+          font-size: 12px;
+          width: 135px; }
+        body #wrap #content #articles .archive-article p.title {
+          width: 350px;
+          margin: -3px 0 0 10px;
+          float: left;
+          font-size: 14px; }
+          body #wrap #content #articles .archive-article p.title a {
+            color: #a40713; }
+          body #wrap #content #articles .archive-article p.title a:hover {
+            color: #747981; }
+    body #wrap #content #archive-link {
+      font-size: 14px;
+      color: #747981; }
+    body #wrap #content #archive-link:hover {
+      color: #a40713; }
+    body #wrap #content #sidebar {
+      width: 200px;
+      float: left;
+      margin: 0 0 0 25px; }
+      body #wrap #content #sidebar p {
+        font-size: 14px;
+        color: #595d63; }
+      body #wrap #content #sidebar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0; }
+        body #wrap #content #sidebar ul li {
+          margin: 6px 0;
+          list-style: none;
+          text-indent: 24px;
+          font-size: 12px; }
+          body #wrap #content #sidebar ul li a {
+            color: #a40713; }
+      body #wrap #content #sidebar #rss {
+        background: url("/public/images/feed.png") no-repeat; }
+      body #wrap #content #sidebar #twitter {
+        background: url("/public/images/twitter.png") no-repeat; }

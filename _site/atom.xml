@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <title>Matte Noble</title>
+ <link href="http://mattenoble.com/atom.xml" rel="self"/>
+ <link href="http://mattenoble.com/"/>
+ <updated>2010-11-07T00:13:42-04:00</updated>
+ <id>http://mattenoble.com/</id>
+ <author>
+   <name>Matte Noble</name>
+   <email>me@mattenoble.com</email>
+ </author>
+ 
+   <entry>
+     <title>Lorem Ipsum Dolar Fantum</title>
+     <link href="http://mattenoble.com/2010/11/06/lorem-ipsum-dolar-fantum/"/>
+     <updated>2010-11-06T00:00:00-04:00</updated>
+     <id>http://mattenoble.com/2010/11/06/lorem-ipsum-dolar-fantum</id>
+     <content type="html">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</content>
+   </entry>
+ 
+   <entry>
+     <title>Something Older with a Super Long Title to See How Things Wrap</title>
+     <link href="http://mattenoble.com/2010/11/04/something-older/"/>
+     <updated>2010-11-04T00:00:00-04:00</updated>
+     <id>http://mattenoble.com/2010/11/04/something-older</id>
+     <content type="html">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</content>
+   </entry>
+ 
+</feed>

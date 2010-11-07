@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://mattenoble.com/2010/11/06/lorem-ipsum-dolar-fantum/</loc>
+    <lastmod>2010-11-06</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mattenoble.com/2010/11/04/something-older/</loc>
+    <lastmod>2010-11-04</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://mattenoble.com/</loc>
+    <lastmod>2010-11-07</lastmod>
+  </url>
+  <url>
+    <loc>http://mattenoble.com/archive/</loc>
+    <lastmod>2010-11-07</lastmod>
+  </url>
+</urlset>

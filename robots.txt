@@ -1,0 +1,4 @@
+Sitemap: http://mattenoble.com/sitemap.xml
+
+User-agent: *
+Disallow: /public/

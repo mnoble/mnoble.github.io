@@ -1,0 +1,4 @@
+markdown: rdiscount
+pygments: true
+permalink: pretty
+exclude: [development, config.ru]
