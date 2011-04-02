@@ -7,6 +7,7 @@
     <title>{{ page.title }}</title>
     
     <link rel="stylesheet" type="text/css" href="/public/css/main.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/public/css/clouds.css" media="all">
     <script type="text/javascript" src="http://use.typekit.com/npn1una.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
@@ -25,18 +26,31 @@
                 {{ content }}
             </div>
             
-            <div id="sidebar">
-                <p id="bio">
-                    This is the blog of Matte Noble, as if you couldn't
-                    guess. It's about Ruby, software development, design 
-                    and other stuff.
-                </p>
-                
-                <ul>
-                    <li id="rss"><a href="http://feeds.feedburner.com/mattenoble">RSS</a></li>
-                    <li id="twitter"><a href="http://twitter.com/mattenoble">@mattenoble</a></li>
-                </ul>
-            </div>
+            <div style="clear:both;"></div> 
+            
+            <ul id="article-nav">
+            {% if paginator.next_page %}
+                <li id="previous"><a href="/page{{ paginator.next_page }}">&laquo; Previous</a></li>
+            {% endif %}
+            {% if paginator.previous_page %}
+                <li id="next"><a href="/page{{ paginator.previous_page }}">Next &raquo;</a></li>
+            {% endif %}
+            </ul>
+        </div>
+        
+        <div id="sidebar">
+            <p id="bio">
+                I'm Matte Noble, a Software Developer, Ruby
+                enthusiast, Metalhead and all around curious guy.
+                This is where I share things I know and learn.
+            </p>
+            
+            <ul>
+                <li id="archive"><a href="/archive">Archive</a></li>
+                <li id="rss"><a href="http://feeds.feedburner.com/mattenoble">RSS</a></li>
+                <li id="twitter"><a href="http://twitter.com/mattenoble">@mattenoble</a></li>
+                <li id="github"><a href="http://github.com/mnoble">github.com/mnoble</a></li>
+            </ul>
         </div>
     </div>
 </body>

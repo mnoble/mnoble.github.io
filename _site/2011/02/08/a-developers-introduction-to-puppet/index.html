@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="uPo9ejFsAXhqlhxbsrVtWkBWHQQDUGvP5lSSqj5Mb54" />
+    
+    <title>A Developer's Introduction to Puppet</title>
+    
+    <link rel="stylesheet" type="text/css" href="/public/css/main.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/public/css/clouds.css" media="all">
+    <script type="text/javascript" src="http://use.typekit.com/npn1una.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+    <div id="wrap">
+        <h1>
+            <a href="/">
+                <p>MATTENOBLE</p>
+                <img src="/public/images/gem.png" alt="rubygem" />
+                <div style="clear:both;"></div>
+            </a>
+        </h1>
+        
+        <div id="content">
+            <div id="articles">
+                <div class="article">
+    <h1>A Developer's Introduction to Puppet</h1>
+    <p><img src="/public/images/sock-puppet.jpg" class="right" title="Puppet" alt="Puppet" /></p>
+<p><a href="http://www.puppetlabs.com/puppet/introduction/">Puppet</a> is one of those things most Rubyists have probably heard of, but few know very well. I&#8217;ve recently started using it in conjunction with Vagrant and found myself wanting a consolidated explanation of it&#8217;s components. So, here it is!</p>
+<h3>Nodes</h3>
+<p>A node represents a specific type of machine. It defines how, and with what, that type of server gets provisioned. Examples nodes would be like a web server, a mail server or an <span class="caps">LDAP</span> server.</p>
+<h3>Modules</h3>
+<p>Puppet modules are much like Ruby modules. They&#8217;re an organization tool which DRYs up your Puppet configs. Modules contain Classes, Templates, Files, etc. The Puppet site explains it well:</p>
+<blockquote>
+<p>Modules are reusable, sharable units of Puppet code. They can automate tasks such as setting up a database, web server, or mail server.</p>
+</blockquote>
+<h3>Classes</h3>
+<p>Classes are the actual unit you can include into <em>nodes</em> or even other classes. Classes support a simplified type of inheritance. Say you want to use nginx as a web server one place, but as a proxy another. You&#8217;d have a base class, <code>nginx</code>, then a <code>nginx::proxy</code> class which modifies the base to act as a proxy server.</p>
+<h3>Resources</h3>
+<p>Resources are what classes contain. They&#8217;re a single item that is part of the overall configuration of a class. Take our <code>nginx</code> example above, to provision nginx on a machine we need a couple things. We need to ensure the package is installed, we want to make sure the service is running and we&#8217;d like to define a custom <code>nginx.conf</code>. These would all be resource definitions.</p>
+<h3>Templates</h3>
+<p>Templates are any file you want to put on the machine being provisioned. This can range from a <code>nginx.conf</code> file to <code>/etc/hosts</code>. You can include dynamic data by specifying class variables in your.. you guessed it, classes! These files are just <em>erb</em> so any normal Ruby goes.</p>
+<h3>Just the Surface</h3>
+<p>This is a very, very basic overview of Puppet. It&#8217;s an extremely powerful platform that can really make your life easier. I didn&#8217;t cover any examples of the Puppet <span class="caps">DSL</span> on purpose, I want this to just be a basic primer to Puppet&#8217;s concepts.</p>
+<p>Check out <a href="http://docs.puppetlabs.com/">Puppet Labs&#8217; Documentation</a> for more information. Also, take a look into their <a href="http://forge.puppetlabs.com/">Module Forge</a> for preexisting modules you can use right now, with barely any work.</p>
+</div>
+
+<ul id="article-nav">
+
+    <li id="previous"><a href="/2011/01/18/new-year-new-site/">&laquo; Previous</a></li>
+
+
+    <li id="next"><a href="/2011/03/22/forge-python-fixture-replacement/">Next &raquo;</a></li>
+
+</ul>
+            </div>
+            
+            <div style="clear:both;"></div> 
+            
+            <ul id="article-nav">
+            
+            
+            </ul>
+        </div>
+        
+        <div id="sidebar">
+            <p id="bio">
+                I'm Matte Noble, a Software Developer, Ruby
+                enthusiast, Metalhead and all around curious guy.
+                This is where I share things I know and learn.
+            </p>
+            
+            <ul>
+                <li id="archive"><a href="/archive">Archive</a></li>
+                <li id="rss"><a href="http://feeds.feedburner.com/mattenoble">RSS</a></li>
+                <li id="twitter"><a href="http://twitter.com/mattenoble">@mattenoble</a></li>
+                <li id="github"><a href="http://github.com/mnoble">github.com/mnoble</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

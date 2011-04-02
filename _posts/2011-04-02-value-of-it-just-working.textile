@@ -1,0 +1,27 @@
+---
+layout: post
+title: Taking Care of Business
+date: 2011-04-02
+---
+
+One of the many things I love about the Ruby community is the notion that things should "just work" out of the box. I'm sure it's in part due to Rails' convention over configuration mentality, but I think it's more than that.
+
+During the day I wear skin tight, rockstar style snake skin pants. If you aren't picking up on my odd, far-reaching metaphor, I mean I write Python code. Anyway, it may just be a lack of experience in the community but things seem infinitely more complicated to get up and running than when I'm working with Ruby. It just feels like there is more between me and the end goal.
+
+Here's a few of my favorite pieces of "just works" Ruby software:
+
+h3. Devise
+
+<code>rails g devise:install</code> and <code>rails g devise user</code> Done. You've got a sign in page, a user model, migration and all the goodness. I just wrote the steps for adding authentication to an app in a single sentence. That's incredible.
+
+h3. Heroku
+
+Heroku is another great example that literally takes seconds to get up and running with. <code>rails new blog</code>, <code>heroku create</code>, <code>git push heroku master</code>. Done & done. Application deployed and online.
+
+h3. Rubygems
+
+So you have a gem you want to make available to the world? Simple, <code>gem build whatever.gemspec</code> and <code>gem push whatever-0.0.1.gem</code>. Done. Granted, I do know this one has a Python equivalent. <code>python setup.py register</code> claims to get you the same, but my recent attempts have all failed with, "You are not allowed to store 'whatever' package information". Okay.. so.. what now?
+
+Tools are an important part of any developers day to day life. I think tools are partially why Ruby developers are typically quite productive. We see the value in good development tools and we spend time crafting them to "just work".
+
+This is only one of the many things I admire about the Ruby community, but it's an important one. Having efficient tools helps make an efficient developer.

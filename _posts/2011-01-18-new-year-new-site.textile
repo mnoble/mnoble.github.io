@@ -1,0 +1,18 @@
+---
+layout: post
+title: New Year, New Site
+date: 2011-01-18
+---
+As cliche as it may be, I've set a New Years resolution for myself; consistently update content on this blog.
+
+I've wanted to resurrect this site for quite some time, but never got around to it. That is changing. I read an "interesting article":http://timeless.judofyr.net/your-blog-is-a-project recently that gave me some good ideas. A blog is very much like any other project and I'm going to start treating it like one.
+
+When I'm designing, developing, writing, whatever, something that's going to be public or seen by others, I obsess over every small detail. I need to take a more iterative approach to everything. Things don't have to be perfect in their first incarnation. Or any incarnation for that matter.
+
+h3. The Approach
+
+I'm going to set up an issue tracker for article ideas, issues, etc. I'm also going to start carry around a pocket journal to write down ideas throughout the day.
+
+h3. Comments
+
+There will be no comments on this blog directly, at least initially. If there's enough interest in the future I'll add them, but for the time being they aren't needed. Until then, I'll let sites like Rubyflow and HackerNews support those conversations for me.
