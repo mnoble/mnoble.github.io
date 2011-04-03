@@ -118,7 +118,6 @@ body {
           font: 12px "Monaco", "Lucida Console", "Lucida Sans Unicode", monospace;
           line-height: 18px; }
       body #wrap #content #articles .archive-article {
-        line-height: 0;
         list-style: none;
         margin: 5px 0; }
         body #wrap #content #articles .archive-article p {
