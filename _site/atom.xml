@@ -3,12 +3,30 @@
  <title>Matte Noble</title>
  <link href="http://mattenoble.com/atom.xml" rel="self"/>
  <link href="http://mattenoble.com/"/>
- <updated>2011-04-04T18:17:43-04:00</updated>
+ <updated>2011-04-25T22:32:37-04:00</updated>
  <id>http://mattenoble.com/</id>
  <author>
    <name>Matte Noble</name>
    <email>me@mattenoble.com</email>
  </author>
+ 
+   <entry>
+     <title>RSpec Stubbing with Defered Return Values</title>
+     <link href="http://mattenoble.com/2011/04/24/deferred-return-values-for-rspec-stubs/"/>
+     <updated>2011-04-24T00:00:00-04:00</updated>
+     <id>http://mattenoble.com/2011/04/24/deferred-return-values-for-rspec-stubs</id>
+     <content type="html">&lt;p&gt;While working on &lt;a href=&quot;http://github.com/mnoble/tabby&quot;&gt;Tabby&lt;/a&gt; I hit an issue when stubbing Tempfile.new. Instead of creating a Tempfile I wanted to just use a StringIO-ish (&lt;code&gt;FakeFile&lt;/code&gt;) object so I didn&amp;#8217;t write to the filesystem.&lt;/p&gt;
+&lt;h3&gt;The Problem&lt;/h3&gt;
+&lt;pre class=&quot;clouds&quot;&gt;
+&lt;span class=&quot;LibraryClassType&quot;&gt;Tempfile&lt;/span&gt;.&lt;span class=&quot;FunctionName&quot;&gt;stub&lt;/span&gt;(&lt;span class=&quot;UserDefinedConstant&quot;&gt;&lt;span class=&quot;UserDefinedConstant&quot;&gt;:&lt;/span&gt;new&lt;/span&gt;).&lt;span class=&quot;FunctionName&quot;&gt;and_return&lt;/span&gt;(&lt;span class=&quot;LibraryClassType&quot;&gt;FakeFile&lt;/span&gt;.&lt;span class=&quot;FunctionName&quot;&gt;new&lt;/span&gt;)
+&lt;/pre&gt;&lt;p&gt;The problem is that Tabby creates a new Tempfile for every tab it needs to make, meaning it can be multiple times depending on the setup.&lt;/p&gt;
+&lt;p&gt;So one of the setups in my tests has two tabs. For the first tab, my FakeFile object was opened, written to and closed. The next tab did the same, to that same exact FakeFile instance. Since it was already closed, I got &lt;code&gt;IOError: not opened for writing&lt;/code&gt;. Lame.&lt;/p&gt;
+&lt;h3&gt;The Solution&lt;/h3&gt;
+&lt;p&gt;RSpec&amp;#8217;s &lt;code&gt;and_returns&lt;/code&gt; takes a block, that is evaluated when the stubbed method is called. This way it&amp;#8217;s invoked from a different context each time, giving us a brand new FakeFile each time.&lt;/p&gt;
+&lt;pre class=&quot;clouds&quot;&gt;
+&lt;span class=&quot;LibraryClassType&quot;&gt;Tempfile&lt;/span&gt;.&lt;span class=&quot;FunctionName&quot;&gt;stub&lt;/span&gt;(&lt;span class=&quot;UserDefinedConstant&quot;&gt;&lt;span class=&quot;UserDefinedConstant&quot;&gt;:&lt;/span&gt;new&lt;/span&gt;).&lt;span class=&quot;FunctionName&quot;&gt;and_return&lt;/span&gt; { &lt;span class=&quot;LibraryClassType&quot;&gt;FakeFile&lt;/span&gt;.&lt;span class=&quot;FunctionName&quot;&gt;new&lt;/span&gt; }
+&lt;/pre&gt;&lt;p&gt;So if you have a stub that needs to return the same type of object, but a brand spank&amp;#8217;n new instance of it each time, use a block.&lt;/p&gt;</content>
+   </entry>
  
    <entry>
      <title>Taking Care of Business</title>

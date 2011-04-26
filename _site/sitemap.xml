@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://mattenoble.com/2011/04/24/deferred-return-values-for-rspec-stubs/</loc>
+    <lastmod>2011-04-24</lastmod>
+  </url>
+  
+  <url>
     <loc>http://mattenoble.com/2011/04/02/value-of-it-just-working/</loc>
     <lastmod>2011-04-02</lastmod>
   </url>
@@ -28,10 +33,10 @@
   
   <url>
     <loc>http://mattenoble.com/</loc>
-    <lastmod>2011-04-04</lastmod>
+    <lastmod>2011-04-25</lastmod>
   </url>
   <url>
     <loc>http://mattenoble.com/archive/</loc>
-    <lastmod>2011-04-04</lastmod>
+    <lastmod>2011-04-25</lastmod>
   </url>
 </urlset>
