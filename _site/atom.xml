@@ -3,7 +3,7 @@
  <title>Matte Noble</title>
  <link href="http://mattenoble.com/atom.xml" rel="self"/>
  <link href="http://mattenoble.com/"/>
- <updated>2011-04-25T22:32:37-04:00</updated>
+ <updated>2011-04-25T22:38:07-04:00</updated>
  <id>http://mattenoble.com/</id>
  <author>
    <name>Matte Noble</name>
@@ -11,7 +11,7 @@
  </author>
  
    <entry>
-     <title>RSpec Stubbing with Defered Return Values</title>
+     <title>Blocky RSpec Stubbing</title>
      <link href="http://mattenoble.com/2011/04/24/deferred-return-values-for-rspec-stubs/"/>
      <updated>2011-04-24T00:00:00-04:00</updated>
      <id>http://mattenoble.com/2011/04/24/deferred-return-values-for-rspec-stubs</id>
