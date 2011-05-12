@@ -25,6 +25,25 @@
             <div id="articles">
                 
 <div class="article">
+    <h2><a href="/2011/03/30/TADDD/">Test and Design Driven Development</a></h2>
+    <p>For quite some time the way I&#8217;ve worked was to develop the application as if the interface didn&#8217;t matter, until it was done. Write my features, tests, etc and then when you have a functioning 1.0, slap some pretty on it. It always felt wrong, it felt unfair to the application.</p>
+<p><a href="http://rubylearning.com/blog/2010/10/05/outside-in-development/">Outside-In Development</a> is pretty awesome but while it ends up being great for features and application code, it didn&#8217;t seem right for mixing in some design work. I&#8217;ve altered the my general, outside-in, workflow to include some design time. Here&#8217;s how it goes..</p>
+<h3>Cucumber</h3>
+<p>Write a feature; keep it high level and based on value (you already know this though). Lets say you&#8217;re working on the Authentication portion of your application. You want to make sure when a user signs in, they are greeted with the message &#8220;Hey there!&#8221;.</p>
+<h3>RSpec, MiniTest, etc.</h3>
+<p>Write some controller and model tests to get rolling with the lower level login stuff. Let&#8217;s pretend you just did that. A user can sign in and they will in fact see &#8220;Hey there!&#8221;. That&#8217;s awesome, nice work. Except&#8230;</p>
+<p><img src="/public/images/taddd/crap-login.jpg" title="ugly login screen" alt="ugly login screen" /></p>
+<p>Gross. You could leave it like this for the time being and move on to other features if you so incline. I, however, can not do that anymore. Having a functioning app with a lame UI sounds as bad as having no app at all to me.</p>
+<h3>Design</h3>
+<p>At this point, it&#8217;s time to put a little shine on your application. If you&#8217;re not doing both design and development you could probably even &#8220;get lean&#8221; here and send a &#8220;card&#8221; downstream to a designer. Hmm, <code>article_ideas += 1</code>.</p>
+<p>Anyway, now that we know we have a reliable test suite for this feature, start playing with the UI. With all the cool things available these days like <span class="caps">SASS</span>, Compass, Haml, etc. this step should be fast and easy, even without Photoshop.</p>
+<p><img src="/public/images/taddd/nice-login.jpg" title="pretty login screen" alt="pretty login screen" /></p>
+<p>So now you have a well tested, functional and quite attractive sign in feature. The cool thing about this approach is that it integrates really well with the normal red, green, refactor methodology. This won&#8217;t be the last sign in feature you write, most likely, so every new one is a chance to not only refactor your code, but also the design.</p>
+<p>So if you&#8217;re a designer/developer hybrid or are tasked to doing both, try this out. It&#8217;s helped me get that abstract vision for things into a clearer light, which is always a good thing.</p>
+    <div style="clear:both;"></div> 
+</div>
+
+<div class="article">
     <h2><a href="/2011/03/22/forge-python-fixture-replacement/">Forge - Python Fixture Replacement</a></h2>
     <p>I found myself wanting a simple way to create objects with fake data for unit tests, in Python. I always liked <a href="https://github.com/thoughtbot/factory_girl">factory_girl</a> and the way it keeps things clean and coherent. However, Ruby libraries were no help to me here, directly at least, I needed a Python solution.</p>
 <p>I wanted something that wasn&#8217;t fixtures. First of all, I don&#8217;t think you should need a database to run unit tests. If you&#8217;re writing simple, modular code you should be able to give input and test output. So my answer to that need is <a href="https://github.com/mnoble/forge">Forge</a>.</p>
@@ -65,6 +84,7 @@ Forge.configure(<span class="FunctionArgument">models</span><span class="Keyword
 </pre><p>Now, when you try to build a <code>user</code> factory, it will try to import <code>project.models.User</code>. If it exists, it will create an instance of it and apply the factory data to it. As long as your model&#8217;s constructor takes <code>**kwargs</code> of attributes, Forge should work just fine.</p>
 <h3>Wrap Up</h3>
 <p>Forge isn&#8217;t anything fancy, but it provides a uniform way to define and create real objects for tests. It keeps things organized, the intent clear and works out of the box. If you find yourself wanting to ditch the database in your unit tests, check it out.</p>
+    <div style="clear:both;"></div> 
 </div>
 
 <div class="article">
@@ -87,23 +107,15 @@ Forge.configure(<span class="FunctionArgument">models</span><span class="Keyword
 <h3>Just the Surface</h3>
 <p>This is a very, very basic overview of Puppet. It&#8217;s an extremely powerful platform that can really make your life easier. I didn&#8217;t cover any examples of the Puppet <span class="caps">DSL</span> on purpose, I want this to just be a basic primer to Puppet&#8217;s concepts.</p>
 <p>Check out <a href="http://docs.puppetlabs.com/">Puppet Labs&#8217; Documentation</a> for more information. Also, take a look into their <a href="http://forge.puppetlabs.com/">Module Forge</a> for preexisting modules you can use right now, with barely any work.</p>
-</div>
-
-<div class="article">
-    <h2><a href="/2011/01/18/new-year-new-site/">New Year, New Site</a></h2>
-    <p>As cliche as it may be, I&#8217;ve set a New Years resolution for myself; consistently update content on this blog.</p>
-<p>I&#8217;ve wanted to resurrect this site for quite some time, but never got around to it. That is changing. I read an <a href="http://timeless.judofyr.net/your-blog-is-a-project">interesting article</a> recently that gave me some good ideas. A blog is very much like any other project and I&#8217;m going to start treating it like one.</p>
-<p>When I&#8217;m designing, developing, writing, whatever, something that&#8217;s going to be public or seen by others, I obsess over every small detail. I need to take a more iterative approach to everything. Things don&#8217;t have to be perfect in their first incarnation. Or any incarnation for that matter.</p>
-<h3>The Approach</h3>
-<p>I&#8217;m going to set up an issue tracker for article ideas, issues, etc. I&#8217;m also going to start carry around a pocket journal to write down ideas throughout the day.</p>
-<h3>Comments</h3>
-<p>There will be no comments on this blog directly, at least initially. If there&#8217;s enough interest in the future I&#8217;ll add them, but for the time being they aren&#8217;t needed. Until then, I&#8217;ll let sites like Rubyflow and HackerNews support those conversations for me.</p>
+    <div style="clear:both;"></div> 
 </div>
 
             </div>
             
         
             <ul id="article-nav">
+            
+                <li id="previous"><a href="/page3">&laquo; Previous</a></li>
             
             
             

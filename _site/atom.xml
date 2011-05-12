@@ -3,12 +3,25 @@
  <title>Matte Noble</title>
  <link href="http://mattenoble.com/atom.xml" rel="self"/>
  <link href="http://mattenoble.com/"/>
- <updated>2011-04-25T22:38:07-04:00</updated>
+ <updated>2011-05-11T23:33:53-04:00</updated>
  <id>http://mattenoble.com/</id>
  <author>
    <name>Matte Noble</name>
    <email>me@mattenoble.com</email>
  </author>
+ 
+   <entry>
+     <title>The Value of I Don't Know</title>
+     <link href="http://mattenoble.com/2011/05/11/the-value-of-i-dont-know/"/>
+     <updated>2011-05-11T00:00:00-04:00</updated>
+     <id>http://mattenoble.com/2011/05/11/the-value-of-i-dont-know</id>
+     <content type="html">&lt;p&gt;&amp;#8220;I don&amp;#8217;t know&amp;#8221; is one of the most powerful things you can say in my opinion. I don&amp;#8217;t mean using it when you just don&amp;#8217;t feel like talking, I mean when you truly do not understand something.&lt;/p&gt;
+&lt;p&gt;I think people feel weak or inferior when they don&amp;#8217;t understand something and the rest of the group does. No one wants to be left out. It&amp;#8217;s especially bad in an industry full of very smart people, solving very challenging problems, like we have in Software Development. You&amp;#8217;re talking with your team of ten and every one is on the same page except you; it&amp;#8217;s frightening!&lt;/p&gt;
+&lt;p&gt;Saying I don&amp;#8217;t know is a true sign of strength though. Admitting to a group of people that you don&amp;#8217;t understand something takes guts. It also takes brains. Wait, it takes brains to admit your brain doesn&amp;#8217;t know something. That doesn&amp;#8217;t make sense. &lt;strong&gt;Wrong sir!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/images/wrong.jpg&quot; title=&quot;Wrong sir&quot; alt=&quot;Wrong sir&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;It makes perfect sense. When you admit you don&amp;#8217;t know something to a group of people, you&amp;#8217;re essentially making an informal pact with them to figure it out. You&amp;#8217;re also not feeding them false information, which is always a good thing. Unless your a double-agent.&lt;/p&gt;
+&lt;p&gt;Anyway, the point is, don&amp;#8217;t be afraid to admit you don&amp;#8217;t know something. Some people may come down on you for it, but fuck them. Be honest, be sincere and acknowledge when you have something to learn. That&amp;#8217;s how you improve, right?&lt;/p&gt;</content>
+   </entry>
  
    <entry>
      <title>Blocky RSpec Stubbing</title>
