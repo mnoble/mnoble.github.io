@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="uPo9ejFsAXhqlhxbsrVtWkBWHQQDUGvP5lSSqj5Mb54" />
     
-    <title>MATTENOBLE - Ruby, Software Development and other Stuff.</title>
+    <title>Tabby - iTerm2 Environments</title>
     
     <link rel="stylesheet" type="text/css" href="/public/css/main.css" media="all">
     <link rel="stylesheet" type="text/css" href="/public/css/clouds.css" media="all">
@@ -23,9 +23,8 @@
         
         <div id="content">
             <div id="articles">
-                
-<div class="article">
-    <h2><a href="/2011/05/12/tabby/">Tabby - iTerm2 Environments</a></h2>
+                <div class="article">
+    <h1>Tabby - iTerm2 Environments</h1>
     <p>If you&#8217;ve ever created a Jekyll site with, say, <span class="caps">SASS</span> and Coffeescript,<br />
 you know how annoying it is to set up your terminal environment every time. Open a tab, cd to your project, open a new tab, <code>jekyll --server --auto</code>, open yet another tab, cd to your project, <code>sass --watch whatever.sass:whatever.css</code>, etc.</p>
 <p>I got tired of doing that multiple times per day, week, whatever. And so, <a href="https://github.com/mnoble/tabby">Tabby</a> was born.</p>
@@ -74,42 +73,18 @@ tabby edit [project]    <span class="Comment"><span class="Comment">#</span> Ope
 tabby list              <span class="Comment"><span class="Comment">#</span> List all projects.</span>
 tabby open [project]    <span class="Comment"><span class="Comment">#</span> Starts up the environment for a project.</span>
 </pre>
-    <div style="clear:both;"></div> 
 </div>
 
-<div class="article">
-    <h2><a href="/2011/05/11/the-value-of-i-dont-know/">The Value of I Don't Know</a></h2>
-    <p>&#8220;I don&#8217;t know&#8221; is one of the most powerful things you can say in my opinion. I don&#8217;t mean using it when you just don&#8217;t feel like talking, I mean when you truly do not understand something.</p>
-<p>I think people feel weak or inferior when they don&#8217;t understand something and the rest of the group does. No one wants to be left out. It&#8217;s especially bad in an industry full of very smart people, solving very challenging problems, like we have in Software Development. You&#8217;re talking with your team of ten and every one is on the same page except you; it&#8217;s frightening!</p>
-<p>Saying I don&#8217;t know is a true sign of strength though. Admitting to a group of people that you don&#8217;t understand something takes guts. It also takes brains. Wait, it takes brains to admit your brain doesn&#8217;t know something. That doesn&#8217;t make sense. <strong>Wrong sir!</strong></p>
-<p><img src="/public/images/wrong.jpg" title="Wrong sir" alt="Wrong sir" /></p>
-<p>It makes perfect sense. When you admit you don&#8217;t know something to a group of people, you&#8217;re essentially making an informal pact with them to figure it out. You&#8217;re also not feeding them false information, which is always a good thing. Unless your a double-agent.</p>
-<p>Anyway, the point is, don&#8217;t be afraid to admit you don&#8217;t know something. Some people may come down on you for it, but fuck them. Be honest, be sincere and acknowledge when you have something to learn. That&#8217;s how you improve, right?</p>
-    <div style="clear:both;"></div> 
-</div>
+<ul id="article-nav">
 
-<div class="article">
-    <h2><a href="/2011/04/24/deferred-return-values-for-rspec-stubs/">Blocky RSpec Stubbing</a></h2>
-    <p>While working on <a href="http://github.com/mnoble/tabby">Tabby</a> I hit an issue when stubbing Tempfile.new. Instead of creating a Tempfile I wanted to just use a StringIO-ish (<code>FakeFile</code>) object so I didn&#8217;t write to the filesystem.</p>
-<h3>The Problem</h3>
-<pre class="clouds">
-<span class="LibraryClassType">Tempfile</span>.<span class="FunctionName">stub</span>(<span class="UserDefinedConstant"><span class="UserDefinedConstant">:</span>new</span>).<span class="FunctionName">and_return</span>(<span class="LibraryClassType">FakeFile</span>.<span class="FunctionName">new</span>)
-</pre><p>The problem is that Tabby creates a new Tempfile for every tab it needs to make, meaning it can be multiple times depending on the setup.</p>
-<p>So one of the setups in my tests has two tabs. For the first tab, my FakeFile object was opened, written to and closed. The next tab did the same, to that same exact FakeFile instance. Since it was already closed, I got <code>IOError: not opened for writing</code>. Lame.</p>
-<h3>The Solution</h3>
-<p>RSpec&#8217;s <code>and_returns</code> takes a block, that is evaluated when the stubbed method is called. This way it&#8217;s invoked from a different context each time, giving us a brand new FakeFile each time.</p>
-<pre class="clouds">
-<span class="LibraryClassType">Tempfile</span>.<span class="FunctionName">stub</span>(<span class="UserDefinedConstant"><span class="UserDefinedConstant">:</span>new</span>).<span class="FunctionName">and_return</span> { <span class="LibraryClassType">FakeFile</span>.<span class="FunctionName">new</span> }
-</pre><p>So if you have a stub that needs to return the same type of object, but a brand spank&#8217;n new instance of it each time, use a block.</p>
-    <div style="clear:both;"></div> 
-</div>
+    <li id="previous"><a href="/2011/05/11/the-value-of-i-dont-know/">&laquo; Previous</a></li>
 
+
+</ul>
             </div>
             
         
             <ul id="article-nav">
-            
-                <li id="previous"><a href="/page2">&laquo; Previous</a></li>
             
             
             

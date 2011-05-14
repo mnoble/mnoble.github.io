@@ -1,0 +1,75 @@
+---
+layout: post
+title: Tabby - iTerm2 Environments
+date: 2011-05-12
+---
+
+If you've ever created a Jekyll site with, say, SASS and Coffeescript,
+you know how annoying it is to set up your terminal environment every time. Open a tab, cd to your project, open a new tab, <code>jekyll --server --auto</code>, open yet another tab, cd to your project, <code>sass --watch whatever.sass:whatever.css</code>, etc.
+
+I got tired of doing that multiple times per day, week, whatever. And so, "Tabby":https://github.com/mnoble/tabby was born.
+
+I created Tabby for two purposes, first to solve the problem described above and second, to play around with the idea of pure Ruby configuration. There's no crazy DSL (sorta), no YAML, no hassle; just Ruby in all it's glory.
+
+h3. A Quick Tutorial
+
+With Tabby, you set up _Projects_. Projects are just collections of iTerm2 tabs and what each one runs. Let's walk through creating my blog environment. First, create the project:
+
+{% uv shell-unix-generic %}
+$ tabby create blog
+{% enduv %}
+
+This will open up your new project in whatever you have <code>$EDITOR</code> set to. Tabby assumes you use <code>~/Dev</code> as your project directory because, well frankly, I do. It gives you a skeleton for your project right off the bat:
+
+{% uv ruby %}
+class Blog < Tabby::Base
+  basedir "~/Dev/blog"
+
+  def server
+    exec "rails s"
+  end
+end
+{% enduv %}
+
+<code>basedir</code> is the root of your project. Tabby takes each method in your project class and makes it a tab. The tab gets the name of the method. So above, we'd have a tab created and titled "server". It would immediately run <code>rails s</code>.
+
+Since we're making a Jekyll blog, we can get rid of the Rails tab. We do want to have the Jekyll server running though and also SASS and Coffeescript.
+
+{% uv ruby %}
+class Blog < Tabby::Base
+  basedir "~/Dev/blog"
+
+  def jekyll
+    exec "jekyll --server --auto"
+  end
+
+  def sass
+    exec "sass --watch public/sass:public/stylesheets"
+  end
+
+  def coffee
+    exec "coffee --watch -c public/coffee/ -o public/javascript/"
+  end
+end
+{% enduv %}
+
+So now every time you go to work on your blog, just kick it off with:
+
+{% uv shell-unix-generic %}
+$ tabby open blog
+{% enduv %}
+
+and you'll get:
+
+!/public/images/tabby.jpg(tabby blog environment)!
+
+h3. Usage
+
+Here's a quick run down of the other commands, straight from the horse's mouth:
+
+{% uv shell-unix-generic %}
+tabby create [project]  # Creates an empty project config.
+tabby edit [project]    # Opens the project config with $EDITOR.
+tabby list              # List all projects.
+tabby open [project]    # Starts up the environment for a project.
+{% enduv %}

@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://mattenoble.com/2011/05/12/tabby/</loc>
+    <lastmod>2011-05-12</lastmod>
+  </url>
+  
+  <url>
     <loc>http://mattenoble.com/2011/05/11/the-value-of-i-dont-know/</loc>
     <lastmod>2011-05-11</lastmod>
   </url>
@@ -38,10 +43,10 @@
   
   <url>
     <loc>http://mattenoble.com/</loc>
-    <lastmod>2011-05-11</lastmod>
+    <lastmod>2011-05-14</lastmod>
   </url>
   <url>
     <loc>http://mattenoble.com/archive/</loc>
-    <lastmod>2011-05-11</lastmod>
+    <lastmod>2011-05-14</lastmod>
   </url>
 </urlset>

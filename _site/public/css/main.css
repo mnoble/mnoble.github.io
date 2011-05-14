@@ -105,7 +105,8 @@ body {
           color: #555555;
           font: 12px "Monaco", "Lucida Console", monospace;
           background: #e4e8ec;
-          padding: 2px 3px; }
+          padding: 2px 3px;
+          word-break: keep-all; }
         body #wrap #content #articles .article pre {
           border-radius: 3px;
           -moz-border-radius: 3px;

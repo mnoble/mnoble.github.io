@@ -3,12 +3,67 @@
  <title>Matte Noble</title>
  <link href="http://mattenoble.com/atom.xml" rel="self"/>
  <link href="http://mattenoble.com/"/>
- <updated>2011-05-11T23:33:53-04:00</updated>
+ <updated>2011-05-14T15:27:47-04:00</updated>
  <id>http://mattenoble.com/</id>
  <author>
    <name>Matte Noble</name>
    <email>me@mattenoble.com</email>
  </author>
+ 
+   <entry>
+     <title>Tabby - iTerm2 Environments</title>
+     <link href="http://mattenoble.com/2011/05/12/tabby/"/>
+     <updated>2011-05-12T00:00:00-04:00</updated>
+     <id>http://mattenoble.com/2011/05/12/tabby</id>
+     <content type="html">&lt;p&gt;If you&amp;#8217;ve ever created a Jekyll site with, say, &lt;span class=&quot;caps&quot;&gt;SASS&lt;/span&gt; and Coffeescript,&lt;br /&gt;
+you know how annoying it is to set up your terminal environment every time. Open a tab, cd to your project, open a new tab, &lt;code&gt;jekyll --server --auto&lt;/code&gt;, open yet another tab, cd to your project, &lt;code&gt;sass --watch whatever.sass:whatever.css&lt;/code&gt;, etc.&lt;/p&gt;
+&lt;p&gt;I got tired of doing that multiple times per day, week, whatever. And so, &lt;a href=&quot;https://github.com/mnoble/tabby&quot;&gt;Tabby&lt;/a&gt; was born.&lt;/p&gt;
+&lt;p&gt;I created Tabby for two purposes, first to solve the problem described above and second, to play around with the idea of pure Ruby configuration. There&amp;#8217;s no crazy &lt;span class=&quot;caps&quot;&gt;DSL&lt;/span&gt; (sorta), no &lt;span class=&quot;caps&quot;&gt;YAML&lt;/span&gt;, no hassle; just Ruby in all it&amp;#8217;s glory.&lt;/p&gt;
+&lt;h3&gt;A Quick Tutorial&lt;/h3&gt;
+&lt;p&gt;With Tabby, you set up &lt;em&gt;Projects&lt;/em&gt;. Projects are just collections of iTerm2 tabs and what each one runs. Let&amp;#8217;s walk through creating my blog environment. First, create the project:&lt;/p&gt;
+&lt;pre class=&quot;clouds&quot;&gt;
+$ tabby create blog
+&lt;/pre&gt;&lt;p&gt;This will open up your new project in whatever you have &lt;code&gt;$EDITOR&lt;/code&gt; set to. Tabby assumes you use &lt;code&gt;~/Dev&lt;/code&gt; as your project directory because, well frankly, I do. It gives you a skeleton for your project right off the bat:&lt;/p&gt;
+&lt;pre class=&quot;clouds&quot;&gt;
+&lt;span class=&quot;Keyword&quot;&gt;class&lt;/span&gt; Blog&lt;span class=&quot;InheritedClass&quot;&gt; &lt;span class=&quot;InheritedClass&quot;&gt;&amp;lt;&lt;/span&gt; Tabby::Base&lt;/span&gt;
+  basedir &lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;~/Dev/blog&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+
+  &lt;span class=&quot;Keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;FunctionName&quot;&gt;server&lt;/span&gt;
+    exec &lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;rails s&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;&lt;code&gt;basedir&lt;/code&gt; is the root of your project. Tabby takes each method in your project class and makes it a tab. The tab gets the name of the method. So above, we&amp;#8217;d have a tab created and titled &amp;#8220;server&amp;#8221;. It would immediately run &lt;code&gt;rails s&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Since we&amp;#8217;re making a Jekyll blog, we can get rid of the Rails tab. We do want to have the Jekyll server running though and also &lt;span class=&quot;caps&quot;&gt;SASS&lt;/span&gt; and Coffeescript.&lt;/p&gt;
+&lt;pre class=&quot;clouds&quot;&gt;
+&lt;span class=&quot;Keyword&quot;&gt;class&lt;/span&gt; Blog&lt;span class=&quot;InheritedClass&quot;&gt; &lt;span class=&quot;InheritedClass&quot;&gt;&amp;lt;&lt;/span&gt; Tabby::Base&lt;/span&gt;
+  basedir &lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;~/Dev/blog&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+
+  &lt;span class=&quot;Keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;FunctionName&quot;&gt;jekyll&lt;/span&gt;
+    exec &lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;jekyll --server --auto&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;Keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;FunctionName&quot;&gt;sass&lt;/span&gt;
+    exec &lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;sass --watch public/sass:public/stylesheets&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;Keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;FunctionName&quot;&gt;coffee&lt;/span&gt;
+    exec &lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;coffee --watch -c public/coffee/ -o public/javascript/&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;So now every time you go to work on your blog, just kick it off with:&lt;/p&gt;
+&lt;pre class=&quot;clouds&quot;&gt;
+$ tabby open blog
+&lt;/pre&gt;&lt;p&gt;and you&amp;#8217;ll get:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/public/images/tabby.jpg&quot; title=&quot;tabby blog environment&quot; alt=&quot;tabby blog environment&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;p&gt;Here&amp;#8217;s a quick run down of the other commands, straight from the horse&amp;#8217;s mouth:&lt;/p&gt;
+&lt;pre class=&quot;clouds&quot;&gt;
+tabby create [project]  &lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; Creates an empty project config.&lt;/span&gt;
+tabby edit [project]    &lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; Opens the project config with $EDITOR.&lt;/span&gt;
+tabby list              &lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; List all projects.&lt;/span&gt;
+tabby open [project]    &lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; Starts up the environment for a project.&lt;/span&gt;
+&lt;/pre&gt;</content>
+   </entry>
  
    <entry>
      <title>The Value of I Don't Know</title>
