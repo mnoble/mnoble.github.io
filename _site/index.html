@@ -25,6 +25,30 @@
             <div id="articles">
                 
 <div class="article">
+    <h2><a href="/2011/05/30/ruby-enumerables/">Ruby Enumerables</a></h2>
+    <p>If you&#8217;re writing any type of <span class="caps">API</span> client library, you&#8217;ll probably need some sort of Collection class that&#8217;s iterable. It&#8217;s quite simple, but pretty powerful; most things in Ruby are.</p>
+<h3>It&#8217;s All About Each</h3>
+<p>The Ruby stdlib has this handy module named <code>Enumerable</code>. It basically means that if you mix it into a class which responds to <code>each</code>, you get all the fanciness that is <code>select</code>, <code>map</code>, <code>all?</code>, etc.</p>
+<p>This sounded odd to me at first. How would implementing the method you use to iterate an object&#8230; make it iterable? It only feels weird because we&#8217;re used to <code>each</code> being an interface, not an implementation. It plays both roles!</p>
+<h3>An Egg Sample</h3>
+<pre class="clouds">
+<span class="Keyword">class</span> Carton
+  <span class="Keyword">include</span> <span class="Variable">Enumerable</span>
+
+  <span class="Keyword">def</span> <span class="FunctionName">each</span>
+    <span class="Variable"><span class="Variable">@</span>eggs</span>.<span class="FunctionName">each</span> { |<span class="Variable">egg</span>| <span class="Keyword">yield</span> egg }
+  <span class="Keyword">end</span>
+
+  <span class="Keyword">def</span> <span class="FunctionName">drop</span>
+    <span class="Variable"><span class="Variable">@</span>eggs</span> <span class="KeywordOperator">=</span> []
+  <span class="Keyword">end</span>
+<span class="Keyword">end</span>
+</pre><p>Now whenever you create a Carton object with a bunch of eggs, you&#8217;ll be able to iterate over those eggs one at a time. The eggs themselves can live in an Array, Hash, whatever. The important thing is to yield them one at a time via <code>each</code>.</p>
+<p>With the above code, a Carton object can now do everything any other enumerable object can, but with the added bonus of breaking all over the fucking parking lot&#8230;</p>
+    <div style="clear:both;"></div> 
+</div>
+
+<div class="article">
     <h2><a href="/2011/05/12/tabby/">Tabby - iTerm2 Environments</a></h2>
     <p>If you&#8217;ve ever created a Jekyll site with, say, <span class="caps">SASS</span> and Coffeescript,<br />
 you know how annoying it is to set up your terminal environment every time. Open a tab, cd to your project, open a new tab, <code>jekyll --server --auto</code>, open yet another tab, cd to your project, <code>sass --watch whatever.sass:whatever.css</code>, etc.</p>
@@ -85,22 +109,6 @@ tabby open [project]    <span class="Comment"><span class="Comment">#</span> Sta
 <p><img src="/public/images/wrong.jpg" title="Wrong sir" alt="Wrong sir" /></p>
 <p>It makes perfect sense. When you admit you don&#8217;t know something to a group of people, you&#8217;re essentially making an informal pact with them to figure it out. You&#8217;re also not feeding them false information, which is always a good thing. Unless your a double-agent.</p>
 <p>Anyway, the point is, don&#8217;t be afraid to admit you don&#8217;t know something. Some people may come down on you for it, but fuck them. Be honest, be sincere and acknowledge when you have something to learn. That&#8217;s how you improve, right?</p>
-    <div style="clear:both;"></div> 
-</div>
-
-<div class="article">
-    <h2><a href="/2011/04/24/deferred-return-values-for-rspec-stubs/">Blocky RSpec Stubbing</a></h2>
-    <p>While working on <a href="http://github.com/mnoble/tabby">Tabby</a> I hit an issue when stubbing Tempfile.new. Instead of creating a Tempfile I wanted to just use a StringIO-ish (<code>FakeFile</code>) object so I didn&#8217;t write to the filesystem.</p>
-<h3>The Problem</h3>
-<pre class="clouds">
-<span class="LibraryClassType">Tempfile</span>.<span class="FunctionName">stub</span>(<span class="UserDefinedConstant"><span class="UserDefinedConstant">:</span>new</span>).<span class="FunctionName">and_return</span>(<span class="LibraryClassType">FakeFile</span>.<span class="FunctionName">new</span>)
-</pre><p>The problem is that Tabby creates a new Tempfile for every tab it needs to make, meaning it can be multiple times depending on the setup.</p>
-<p>So one of the setups in my tests has two tabs. For the first tab, my FakeFile object was opened, written to and closed. The next tab did the same, to that same exact FakeFile instance. Since it was already closed, I got <code>IOError: not opened for writing</code>. Lame.</p>
-<h3>The Solution</h3>
-<p>RSpec&#8217;s <code>and_returns</code> takes a block, that is evaluated when the stubbed method is called. This way it&#8217;s invoked from a different context each time, giving us a brand new FakeFile each time.</p>
-<pre class="clouds">
-<span class="LibraryClassType">Tempfile</span>.<span class="FunctionName">stub</span>(<span class="UserDefinedConstant"><span class="UserDefinedConstant">:</span>new</span>).<span class="FunctionName">and_return</span> { <span class="LibraryClassType">FakeFile</span>.<span class="FunctionName">new</span> }
-</pre><p>So if you have a stub that needs to return the same type of object, but a brand spank&#8217;n new instance of it each time, use a block.</p>
     <div style="clear:both;"></div> 
 </div>
 

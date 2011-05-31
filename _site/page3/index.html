@@ -25,6 +25,50 @@
             <div id="articles">
                 
 <div class="article">
+    <h2><a href="/2011/03/22/forge-python-fixture-replacement/">Forge - Python Fixture Replacement</a></h2>
+    <p>I found myself wanting a simple way to create objects with fake data for unit tests, in Python. I always liked <a href="https://github.com/thoughtbot/factory_girl">factory_girl</a> and the way it keeps things clean and coherent. However, Ruby libraries were no help to me here, directly at least, I needed a Python solution.</p>
+<p>I wanted something that wasn&#8217;t fixtures. First of all, I don&#8217;t think you should need a database to run unit tests. If you&#8217;re writing simple, modular code you should be able to give input and test output. So my answer to that need is <a href="https://github.com/mnoble/forge">Forge</a>.</p>
+<p>Forge is a very simple object creator loosely based on factory_girl. You define factories and then you build them. What I really like about this approach is that it makes your intent quite obvious. Testing something to with a confirmed user? <code>confirmed_user = Forge('confirmed_user')</code>. Simple, clean and easy to follow.</p>
+<p>If you&#8217;re familiar with factory_girl at all, this will be nothing new for you. For those of you who aren&#8217;t, here&#8217;s a quick rundown on how to use Forge.</p>
+<h3>Defining Factories</h3>
+<p>First create a <code>project/test/factories</code> directory. You can either define all your factories in the <code>__init__.py</code> file or in separate files then import them in <code>__init__.py</code>.</p>
+<pre class="clouds">
+<span class="Comment"><span class="Comment">#</span> project/test/factories/user.py</span>
+<span class="Keyword">from</span> forge <span class="Keyword">import</span> Forge
+
+<span class="Keyword">with</span> Forge.define(<span class="String"><span class="String">'</span>user<span class="String">'</span></span>) <span class="Keyword">as</span> f:
+    f.name      <span class="KeywordOperator">=</span> <span class="String"><span class="String">'</span>Matte<span class="String">'</span></span>
+    f.age       <span class="KeywordOperator">=</span> <span class="Number">24</span>
+    f.confirmed <span class="KeywordOperator">=</span> <span class="BuiltInConstant">False</span>
+
+<span class="Keyword">with</span> Forge.define(<span class="String"><span class="String">'</span>confirmed_user<span class="String">'</span></span>) <span class="Keyword">as</span> f:
+    f.name      <span class="KeywordOperator">=</span> <span class="String"><span class="String">'</span>Randy<span class="String">'</span></span>
+    f.age       <span class="KeywordOperator">=</span> <span class="Number">67</span>
+    f.confirmed <span class="KeywordOperator">=</span> <span class="BuiltInConstant">True</span>
+</pre><pre class="clouds">
+<span class="Comment"><span class="Comment">#</span> project/test/factories/__init__.py</span>
+<span class="Keyword">import</span> user
+</pre><h3>Building Forged Objects</h3>
+<p>So now that you have a bank of factories for the different scenarios you&#8217;re testing. Time to get down to business. The <span class="caps">API</span> for creating factory objects mimics factory_girl&#8217;s:</p>
+<pre class="clouds">
+<span class="Keyword">import</span> project.test.factories
+<span class="Keyword">from</span> forge <span class="Keyword">import</span> Forge
+
+user <span class="KeywordOperator">=</span> Forge(<span class="String"><span class="String">'</span>user<span class="String">'</span></span>)
+<span class="Comment"><span class="Comment">#</span> OR</span>
+user <span class="KeywordOperator">=</span> Forge.build(<span class="String"><span class="String">'</span>user<span class="String">'</span></span>)
+</pre><p>Unlike factory_girl, Forge will never put your objects into the database. It doesn&#8217;t even know how.</p>
+<h3>Using Models</h3>
+<p>When you&#8217;re working with an <span class="caps">ORM</span> you usually want objects that are as close to what it returns from a database query. Most of the time this is just achieved by instantiating a model class with your factory data. And that is exactly what Forge does. You can configure Forge to use a specific module to retrieve models from:</p>
+<pre class="clouds">
+Forge.configure(<span class="FunctionArgument">models</span><span class="KeywordOperator">=</span><span class="String"><span class="String">'</span>project.models<span class="String">'</span></span>)
+</pre><p>Now, when you try to build a <code>user</code> factory, it will try to import <code>project.models.User</code>. If it exists, it will create an instance of it and apply the factory data to it. As long as your model&#8217;s constructor takes <code>**kwargs</code> of attributes, Forge should work just fine.</p>
+<h3>Wrap Up</h3>
+<p>Forge isn&#8217;t anything fancy, but it provides a uniform way to define and create real objects for tests. It keeps things organized, the intent clear and works out of the box. If you find yourself wanting to ditch the database in your unit tests, check it out.</p>
+    <div style="clear:both;"></div> 
+</div>
+
+<div class="article">
     <h2><a href="/2011/02/08/a-developers-introduction-to-puppet/">A Developer's Introduction to Puppet</a></h2>
     <p><img src="/public/images/sock-puppet.jpg" class="right" title="Puppet" alt="Puppet" /></p>
 <p><a href="http://www.puppetlabs.com/puppet/introduction/">Puppet</a> is one of those things most Rubyists have probably heard of, but few know very well. I&#8217;ve recently started using it in conjunction with Vagrant and found myself wanting a consolidated explanation of it&#8217;s components. So, here it is!</p>
