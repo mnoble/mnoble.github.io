@@ -25,6 +25,17 @@
             <div id="articles">
                 
 <div class="article">
+    <h2><a href="/2011/05/11/the-value-of-i-dont-know/">The Value of I Don't Know</a></h2>
+    <p>&#8220;I don&#8217;t know&#8221; is one of the most powerful things you can say in my opinion. I don&#8217;t mean using it when you just don&#8217;t feel like talking, I mean when you truly do not understand something.</p>
+<p>I think people feel weak or inferior when they don&#8217;t understand something and the rest of the group does. No one wants to be left out. It&#8217;s especially bad in an industry full of very smart people, solving very challenging problems, like we have in Software Development. You&#8217;re talking with your team of ten and every one is on the same page except you; it&#8217;s frightening!</p>
+<p>Saying I don&#8217;t know is a true sign of strength though. Admitting to a group of people that you don&#8217;t understand something takes guts. It also takes brains. Wait, it takes brains to admit your brain doesn&#8217;t know something. That doesn&#8217;t make sense. <strong>Wrong sir!</strong></p>
+<p><img src="/public/images/wrong.jpg" title="Wrong sir" alt="Wrong sir" /></p>
+<p>It makes perfect sense. When you admit you don&#8217;t know something to a group of people, you&#8217;re essentially making an informal pact with them to figure it out. You&#8217;re also not feeding them false information, which is always a good thing. Unless your a double-agent.</p>
+<p>Anyway, the point is, don&#8217;t be afraid to admit you don&#8217;t know something. Some people may come down on you for it, but fuck them. Be honest, be sincere and acknowledge when you have something to learn. That&#8217;s how you improve, right?</p>
+    <div style="clear:both;"></div> 
+</div>
+
+<div class="article">
     <h2><a href="/2011/04/24/deferred-return-values-for-rspec-stubs/">Blocky RSpec Stubbing</a></h2>
     <p>While working on <a href="http://github.com/mnoble/tabby">Tabby</a> I hit an issue when stubbing Tempfile.new. Instead of creating a Tempfile I wanted to just use a StringIO-ish (<code>FakeFile</code>) object so I didn&#8217;t write to the filesystem.</p>
 <h3>The Problem</h3>
@@ -53,25 +64,6 @@
 <p>So you have a gem you want to make available to the world? Simple, <code>gem build whatever.gemspec</code> and <code>gem push whatever-0.0.1.gem</code>. Done. Granted, I do know this one has a Python equivalent. <code>python setup.py register</code> claims to get you the same, but my recent attempts have all failed with, &#8220;You are not allowed to store &#8216;whatever&#8217; package information&#8221;. Okay.. so.. what now?</p>
 <p>Tools are an important part of any developers day to day life. I think tools are partially why Ruby developers are typically quite productive. We see the value in good development tools and we spend time crafting them to &#8220;just work&#8221;.</p>
 <p>This is only one of the many things I admire about the Ruby community, but it&#8217;s an important one. Having efficient tools helps make an efficient developer.</p>
-    <div style="clear:both;"></div> 
-</div>
-
-<div class="article">
-    <h2><a href="/2011/03/30/TADDD/">Test and Design Driven Development</a></h2>
-    <p>For quite some time the way I&#8217;ve worked was to develop the application as if the interface didn&#8217;t matter, until it was done. Write my features, tests, etc and then when you have a functioning 1.0, slap some pretty on it. It always felt wrong, it felt unfair to the application.</p>
-<p><a href="http://rubylearning.com/blog/2010/10/05/outside-in-development/">Outside-In Development</a> is pretty awesome but while it ends up being great for features and application code, it didn&#8217;t seem right for mixing in some design work. I&#8217;ve altered the my general, outside-in, workflow to include some design time. Here&#8217;s how it goes..</p>
-<h3>Cucumber</h3>
-<p>Write a feature; keep it high level and based on value (you already know this though). Lets say you&#8217;re working on the Authentication portion of your application. You want to make sure when a user signs in, they are greeted with the message &#8220;Hey there!&#8221;.</p>
-<h3>RSpec, MiniTest, etc.</h3>
-<p>Write some controller and model tests to get rolling with the lower level login stuff. Let&#8217;s pretend you just did that. A user can sign in and they will in fact see &#8220;Hey there!&#8221;. That&#8217;s awesome, nice work. Except&#8230;</p>
-<p><img src="/public/images/taddd/crap-login.jpg" title="ugly login screen" alt="ugly login screen" /></p>
-<p>Gross. You could leave it like this for the time being and move on to other features if you so incline. I, however, can not do that anymore. Having a functioning app with a lame UI sounds as bad as having no app at all to me.</p>
-<h3>Design</h3>
-<p>At this point, it&#8217;s time to put a little shine on your application. If you&#8217;re not doing both design and development you could probably even &#8220;get lean&#8221; here and send a &#8220;card&#8221; downstream to a designer. Hmm, <code>article_ideas += 1</code>.</p>
-<p>Anyway, now that we know we have a reliable test suite for this feature, start playing with the UI. With all the cool things available these days like <span class="caps">SASS</span>, Compass, Haml, etc. this step should be fast and easy, even without Photoshop.</p>
-<p><img src="/public/images/taddd/nice-login.jpg" title="pretty login screen" alt="pretty login screen" /></p>
-<p>So now you have a well tested, functional and quite attractive sign in feature. The cool thing about this approach is that it integrates really well with the normal red, green, refactor methodology. This won&#8217;t be the last sign in feature you write, most likely, so every new one is a chance to not only refactor your code, but also the design.</p>
-<p>So if you&#8217;re a designer/developer hybrid or are tasked to doing both, try this out. It&#8217;s helped me get that abstract vision for things into a clearer light, which is always a good thing.</p>
     <div style="clear:both;"></div> 
 </div>
 

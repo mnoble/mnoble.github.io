@@ -1,0 +1,22 @@
+---
+layout: post
+title: CSSTree - An ultra-simple CSS parser
+date: 2011-08-20
+---
+
+I needed something to parse a bunch of CSS and gave me a manipulatable object. I tried a couple parsers and none of them worked. It wasn't that they didn't do everything I needed, they just flat out didn't work at all.
+
+So then I made "CSSTree":https://github.com/mnoble/csstree. It's dead-simple and does next to nothing. Other than parsing CSS that is.
+
+{% uv ruby %}
+tree = CSSTree.parse("body { color: #000000; }")
+# => #<CSSTree:0x000000>
+tree.find("body").color
+# => "#000000"
+tree.find("body").margin = "10px" 
+# => "10px"
+tree.render
+# => "body { color: #000000; margin: 10px; }
+{% enduv %}
+
+And that's pretty much it. Go team!
