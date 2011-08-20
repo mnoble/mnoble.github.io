@@ -25,6 +25,23 @@
             <div id="articles">
                 
 <div class="article">
+    <h2><a href="/2011/08/20/csstree-an-ultra-simple-css-parser/">CSSTree - An ultra-simple CSS parser</a></h2>
+    <p>I needed something to parse a bunch of <span class="caps">CSS</span> and gave me a manipulatable object. I tried a couple parsers and none of them worked. It wasn&#8217;t that they didn&#8217;t do everything I needed, they just flat out didn&#8217;t work at all.</p>
+<p>So then I made <a href="https://github.com/mnoble/csstree">CSSTree</a>. It&#8217;s dead-simple and does next to nothing. Other than parsing <span class="caps">CSS</span> that is.</p>
+<pre class="clouds">
+tree <span class="KeywordOperator">=</span> <span class="Variable">CSSTree</span>.<span class="FunctionName">parse</span>(<span class="String"><span class="String">&quot;</span>body { color: #000000; }<span class="String">&quot;</span></span>)
+<span class="Comment"><span class="Comment">#</span> =&gt; #&lt;CSSTree:0x000000&gt;</span>
+tree.<span class="FunctionName">find</span>(<span class="String"><span class="String">&quot;</span>body<span class="String">&quot;</span></span>).<span class="FunctionName">color</span>
+<span class="Comment"><span class="Comment">#</span> =&gt; &quot;#000000&quot;</span>
+tree.<span class="FunctionName">find</span>(<span class="String"><span class="String">&quot;</span>body<span class="String">&quot;</span></span>).<span class="FunctionName">margin</span> <span class="KeywordOperator">=</span> <span class="String"><span class="String">&quot;</span>10px<span class="String">&quot;</span></span> 
+<span class="Comment"><span class="Comment">#</span> =&gt; &quot;10px&quot;</span>
+tree.<span class="FunctionName">render</span>
+<span class="Comment"><span class="Comment">#</span> =&gt; &quot;body { color: #000000; margin: 10px; }</span>
+</pre><p>And that&#8217;s pretty much it. Go team!</p>
+    <div style="clear:both;"></div> 
+</div>
+
+<div class="article">
     <h2><a href="/2011/05/30/ruby-enumerables/">Ruby Enumerables</a></h2>
     <p>If you&#8217;re writing any type of <span class="caps">API</span> client library, you&#8217;ll probably need some sort of Collection class that&#8217;s iterable. It&#8217;s quite simple, but pretty powerful; most things in Ruby are.</p>
 <h3>It&#8217;s All About Each</h3>
@@ -98,17 +115,6 @@ tabby edit [project]    <span class="Comment"><span class="Comment">#</span> Ope
 tabby list              <span class="Comment"><span class="Comment">#</span> List all projects.</span>
 tabby open [project]    <span class="Comment"><span class="Comment">#</span> Starts up the environment for a project.</span>
 </pre>
-    <div style="clear:both;"></div> 
-</div>
-
-<div class="article">
-    <h2><a href="/2011/05/11/the-value-of-i-dont-know/">The Value of I Don't Know</a></h2>
-    <p>&#8220;I don&#8217;t know&#8221; is one of the most powerful things you can say in my opinion. I don&#8217;t mean using it when you just don&#8217;t feel like talking, I mean when you truly do not understand something.</p>
-<p>I think people feel weak or inferior when they don&#8217;t understand something and the rest of the group does. No one wants to be left out. It&#8217;s especially bad in an industry full of very smart people, solving very challenging problems, like we have in Software Development. You&#8217;re talking with your team of ten and every one is on the same page except you; it&#8217;s frightening!</p>
-<p>Saying I don&#8217;t know is a true sign of strength though. Admitting to a group of people that you don&#8217;t understand something takes guts. It also takes brains. Wait, it takes brains to admit your brain doesn&#8217;t know something. That doesn&#8217;t make sense. <strong>Wrong sir!</strong></p>
-<p><img src="/public/images/wrong.jpg" title="Wrong sir" alt="Wrong sir" /></p>
-<p>It makes perfect sense. When you admit you don&#8217;t know something to a group of people, you&#8217;re essentially making an informal pact with them to figure it out. You&#8217;re also not feeding them false information, which is always a good thing. Unless your a double-agent.</p>
-<p>Anyway, the point is, don&#8217;t be afraid to admit you don&#8217;t know something. Some people may come down on you for it, but fuck them. Be honest, be sincere and acknowledge when you have something to learn. That&#8217;s how you improve, right?</p>
     <div style="clear:both;"></div> 
 </div>
 

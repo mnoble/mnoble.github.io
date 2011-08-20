@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://mattenoble.com/2011/08/20/csstree-an-ultra-simple-css-parser/</loc>
+    <lastmod>2011-08-20</lastmod>
+  </url>
+  
+  <url>
     <loc>http://mattenoble.com/2011/05/30/ruby-enumerables/</loc>
     <lastmod>2011-05-30</lastmod>
   </url>
@@ -48,10 +53,10 @@
   
   <url>
     <loc>http://mattenoble.com/</loc>
-    <lastmod>2011-05-30</lastmod>
+    <lastmod>2011-08-20</lastmod>
   </url>
   <url>
     <loc>http://mattenoble.com/archive/</loc>
-    <lastmod>2011-05-30</lastmod>
+    <lastmod>2011-08-20</lastmod>
   </url>
 </urlset>

@@ -3,12 +3,31 @@
  <title>Matte Noble</title>
  <link href="http://mattenoble.com/atom.xml" rel="self"/>
  <link href="http://mattenoble.com/"/>
- <updated>2011-05-30T22:13:43-04:00</updated>
+ <updated>2011-08-20T14:26:06-04:00</updated>
  <id>http://mattenoble.com/</id>
  <author>
    <name>Matte Noble</name>
    <email>me@mattenoble.com</email>
  </author>
+ 
+   <entry>
+     <title>CSSTree - An ultra-simple CSS parser</title>
+     <link href="http://mattenoble.com/2011/08/20/csstree-an-ultra-simple-css-parser/"/>
+     <updated>2011-08-20T00:00:00-04:00</updated>
+     <id>http://mattenoble.com/2011/08/20/csstree-an-ultra-simple-css-parser</id>
+     <content type="html">&lt;p&gt;I needed something to parse a bunch of &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; and gave me a manipulatable object. I tried a couple parsers and none of them worked. It wasn&amp;#8217;t that they didn&amp;#8217;t do everything I needed, they just flat out didn&amp;#8217;t work at all.&lt;/p&gt;
+&lt;p&gt;So then I made &lt;a href=&quot;https://github.com/mnoble/csstree&quot;&gt;CSSTree&lt;/a&gt;. It&amp;#8217;s dead-simple and does next to nothing. Other than parsing &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; that is.&lt;/p&gt;
+&lt;pre class=&quot;clouds&quot;&gt;
+tree &lt;span class=&quot;KeywordOperator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;Variable&quot;&gt;CSSTree&lt;/span&gt;.&lt;span class=&quot;FunctionName&quot;&gt;parse&lt;/span&gt;(&lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;body { color: #000000; }&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)
+&lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; =&amp;gt; #&amp;lt;CSSTree:0x000000&amp;gt;&lt;/span&gt;
+tree.&lt;span class=&quot;FunctionName&quot;&gt;find&lt;/span&gt;(&lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;body&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;).&lt;span class=&quot;FunctionName&quot;&gt;color&lt;/span&gt;
+&lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; =&amp;gt; &amp;quot;#000000&amp;quot;&lt;/span&gt;
+tree.&lt;span class=&quot;FunctionName&quot;&gt;find&lt;/span&gt;(&lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;body&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;).&lt;span class=&quot;FunctionName&quot;&gt;margin&lt;/span&gt; &lt;span class=&quot;KeywordOperator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;10px&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; 
+&lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; =&amp;gt; &amp;quot;10px&amp;quot;&lt;/span&gt;
+tree.&lt;span class=&quot;FunctionName&quot;&gt;render&lt;/span&gt;
+&lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; =&amp;gt; &amp;quot;body { color: #000000; margin: 10px; }&lt;/span&gt;
+&lt;/pre&gt;&lt;p&gt;And that&amp;#8217;s pretty much it. Go team!&lt;/p&gt;</content>
+   </entry>
  
    <entry>
      <title>Ruby Enumerables</title>
