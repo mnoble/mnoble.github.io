@@ -10,6 +10,7 @@ GEM
       directory_watcher (>= 1.1.1)
       liquid (>= 1.9.0)
       maruku (>= 0.5.9)
+    jekyll-ultraviolet (0.0.1)
     liquid (2.2.2)
     maruku (0.6.0)
       syntax (>= 1.0.0)
@@ -23,4 +24,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  jekyll-ultraviolet
   rack-jekyll
