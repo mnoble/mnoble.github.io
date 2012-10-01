@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="uPo9ejFsAXhqlhxbsrVtWkBWHQQDUGvP5lSSqj5Mb54" />
 
-  <title>New Year, New Site</title>
+  <title>MATTENOBLE - Ruby, Software Development and other Stuff.</title>
 
   <link rel="stylesheet" type="text/css" href="/public/css/main.css" media="all">
   <link rel="stylesheet" type="text/css" href="/public/css/highlight.css" media="all">
@@ -27,23 +27,21 @@
   </section>
 
   <section id="content">
-    <div class="article">
-    <h1>New Year, New Site</h1>
-    <p>As cliche as it may be, I&#8217;ve set a New Years resolution for myself; consistently update content on this blog.</p>
-<p>I&#8217;ve wanted to resurrect this site for quite some time, but never got around to it. That is changing. I read an <a href="http://timeless.judofyr.net/your-blog-is-a-project">interesting article</a> recently that gave me some good ideas. A blog is very much like any other project and I&#8217;m going to start treating it like one.</p>
-<p>When I&#8217;m designing, developing, writing, whatever, something that&#8217;s going to be public or seen by others, I obsess over every small detail. I need to take a more iterative approach to everything. Things don&#8217;t have to be perfect in their first incarnation. Or any incarnation for that matter.</p>
-<h3>The Approach</h3>
-<p>I&#8217;m going to set up an issue tracker for article ideas, issues, etc. I&#8217;m also going to start carry around a pocket journal to write down ideas throughout the day.</p>
-<h3>Comments</h3>
-<p>There will be no comments on this blog directly, at least initially. If there&#8217;s enough interest in the future I&#8217;ll add them, but for the time being they aren&#8217;t needed. Until then, I&#8217;ll let sites like Rubyflow and HackerNews support those conversations for me.</p>
+    
+<div class="article">
+    <h2>Blocky RSpec Stubbing</h2>
+    <p>While working on <a href="http://github.com/mnoble/tabby">Tabby</a> I hit an issue when stubbing Tempfile.new. Instead of creating a Tempfile I wanted to just use a StringIO-ish (<code>FakeFile</code>) object so I didn&#8217;t write to the filesystem.</p>
+<h3>The Problem</h3>
+<p>Liquid error: Output for xhtml in clouds style is not yet implemented</p>
+<p>The problem is that Tabby creates a new Tempfile for every tab it needs to make, meaning it can be multiple times depending on the setup.</p>
+<p>So one of the setups in my tests has two tabs. For the first tab, my FakeFile object was opened, written to and closed. The next tab did the same, to that same exact FakeFile instance. Since it was already closed, I got <code>IOError: not opened for writing</code>. Lame.</p>
+<h3>The Solution</h3>
+<p>RSpec&#8217;s <code>and_returns</code> takes a block, that is evaluated when the stubbed method is called. This way it&#8217;s invoked from a different context each time, giving us a brand new FakeFile each time.</p>
+<p>Liquid error: Output for xhtml in clouds style is not yet implemented</p>
+<p>So if you have a stub that needs to return the same type of object, but a brand spank&#8217;n new instance of it each time, use a block.</p>
 </div>
 
-<ul id="article-nav">
 
-
-    <li id="next"><a href="/2011/02/08/a-developers-introduction-to-puppet/">Next &raquo;</a></li>
-
-</ul>
 
     <ul id="archive">
       

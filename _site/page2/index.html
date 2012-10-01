@@ -1,103 +1,100 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <meta name="google-site-verification" content="uPo9ejFsAXhqlhxbsrVtWkBWHQQDUGvP5lSSqj5Mb54" />
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="uPo9ejFsAXhqlhxbsrVtWkBWHQQDUGvP5lSSqj5Mb54" />
 
-    <title>MATTENOBLE - Ruby, Software Development and other Stuff.</title>
+  <title>MATTENOBLE - Ruby, Software Development and other Stuff.</title>
 
-    <link rel="stylesheet" type="text/css" href="/public/css/main.css" media="all">
-    <link rel="stylesheet" type="text/css" href="/public/css/clouds.css" media="all">
-    <script type="text/javascript" src="http://use.typekit.com/npn1una.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <link rel="stylesheet" type="text/css" href="/public/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/public/css/highlight.css" media="all">
+
+  <script type="text/javascript" src="http://use.typekit.com/npn1una.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
+
 <body>
-    <div id="wrap">
-        <h1>
-            <a href="/">
-                <p>MATTENOBLE</p>
-                <img src="/public/images/gem.png" alt="rubygem" />
-            </a>
-            <div style="clear:both;"></div>
-        </h1>
+  <section id="sidebar">
+    <a href="/">
+      <img src="/public/images/metal.png" alt="mattenoble" />
+    </a>
 
-        <div id="content">
-            <div id="articles">
-                
+    <section id="meta">
+      <a href="https://github.com/mnoble" class="github">github</a>
+      <a href="https://twitter.com/mattenoble" class="twitter">twitter</a>
+      <a href="/atom.xm" class="rss">rss</a>
+    </section>
+  </section>
+
+  <section id="content">
+    
 <div class="article">
-    <h2><a href="/2011/05/11/the-value-of-i-dont-know/">The Value of I Don't Know</a></h2>
-    <p>&#8220;I don&#8217;t know&#8221; is one of the most powerful things you can say in my opinion. I don&#8217;t mean using it when you just don&#8217;t feel like talking, I mean when you truly do not understand something.</p>
-<p>I think people feel weak or inferior when they don&#8217;t understand something and the rest of the group does. No one wants to be left out. It&#8217;s especially bad in an industry full of very smart people, solving very challenging problems, like we have in Software Development. You&#8217;re talking with your team of ten and every one is on the same page except you; it&#8217;s frightening!</p>
-<p>Saying I don&#8217;t know is a true sign of strength though. Admitting to a group of people that you don&#8217;t understand something takes guts. It also takes brains. Wait, it takes brains to admit your brain doesn&#8217;t know something. That doesn&#8217;t make sense. <strong>Wrong sir!</strong></p>
-<p><img src="/public/images/wrong.jpg" title="Wrong sir" alt="Wrong sir" /></p>
-<p>It makes perfect sense. When you admit you don&#8217;t know something to a group of people, you&#8217;re essentially making an informal pact with them to figure it out. You&#8217;re also not feeding them false information, which is always a good thing. Unless your a double-agent.</p>
-<p>Anyway, the point is, don&#8217;t be afraid to admit you don&#8217;t know something. Some people may come down on you for it, but fuck them. Be honest, be sincere and acknowledge when you have something to learn. That&#8217;s how you improve, right?</p>
-    <div style="clear:both;"></div> 
+    <h2>Ruby Enumerables</h2>
+    <p>If you&#8217;re writing any type of <span class="caps">API</span> client library, you&#8217;ll probably need some sort of Collection class that&#8217;s iterable. It&#8217;s quite simple, but pretty powerful; most things in Ruby are.</p>
+<h3>It&#8217;s All About Each</h3>
+<p>The Ruby stdlib has this handy module named <code>Enumerable</code>. It basically means that if you mix it into a class which responds to <code>each</code>, you get all the fanciness that is <code>select</code>, <code>map</code>, <code>all?</code>, etc.</p>
+<p>This sounded odd to me at first. How would implementing the method you use to iterate an object&#8230; make it iterable? It only feels weird because we&#8217;re used to <code>each</code> being an interface, not an implementation. It plays both roles!</p>
+<h3>An Egg Sample</h3>
+<p>Liquid error: Output for xhtml in clouds style is not yet implemented</p>
+<p>Now whenever you create a Carton object with a bunch of eggs, you&#8217;ll be able to iterate over those eggs one at a time. The eggs themselves can live in an Array, Hash, whatever. The important thing is to yield them one at a time via <code>each</code>.</p>
+<p>With the above code, a Carton object can now do everything any other enumerable object can, but with the added bonus of breaking all over the fucking parking lot&#8230;</p>
 </div>
 
-<div class="article">
-    <h2><a href="/2011/04/24/deferred-return-values-for-rspec-stubs/">Blocky RSpec Stubbing</a></h2>
-    <p>While working on <a href="http://github.com/mnoble/tabby">Tabby</a> I hit an issue when stubbing Tempfile.new. Instead of creating a Tempfile I wanted to just use a StringIO-ish (<code>FakeFile</code>) object so I didn&#8217;t write to the filesystem.</p>
-<h3>The Problem</h3>
-<pre class="clouds">
-<span class="LibraryClassType">Tempfile</span>.<span class="FunctionName">stub</span>(<span class="UserDefinedConstant"><span class="UserDefinedConstant">:</span>new</span>).<span class="FunctionName">and_return</span>(<span class="LibraryClassType">FakeFile</span>.<span class="FunctionName">new</span>)
-</pre><p>The problem is that Tabby creates a new Tempfile for every tab it needs to make, meaning it can be multiple times depending on the setup.</p>
-<p>So one of the setups in my tests has two tabs. For the first tab, my FakeFile object was opened, written to and closed. The next tab did the same, to that same exact FakeFile instance. Since it was already closed, I got <code>IOError: not opened for writing</code>. Lame.</p>
-<h3>The Solution</h3>
-<p>RSpec&#8217;s <code>and_returns</code> takes a block, that is evaluated when the stubbed method is called. This way it&#8217;s invoked from a different context each time, giving us a brand new FakeFile each time.</p>
-<pre class="clouds">
-<span class="LibraryClassType">Tempfile</span>.<span class="FunctionName">stub</span>(<span class="UserDefinedConstant"><span class="UserDefinedConstant">:</span>new</span>).<span class="FunctionName">and_return</span> { <span class="LibraryClassType">FakeFile</span>.<span class="FunctionName">new</span> }
-</pre><p>So if you have a stub that needs to return the same type of object, but a brand spank&#8217;n new instance of it each time, use a block.</p>
-    <div style="clear:both;"></div> 
-</div>
 
-<div class="article">
-    <h2><a href="/2011/04/02/value-of-it-just-working/">Taking Care of Business</a></h2>
-    <p>One of the many things I love about the Ruby community is the notion that things should &#8220;just work&#8221; out of the box. I&#8217;m sure it&#8217;s in part due to Rails&#8217; convention over configuration mentality, but I think it&#8217;s more than that.</p>
-<p>During the day I wear skin tight, rockstar style snake skin pants. If you aren&#8217;t picking up on my odd, far-reaching metaphor, I mean I write Python code. Anyway, it may just be a lack of experience in the community but things seem infinitely more complicated to get up and running than when I&#8217;m working with Ruby. It just feels like there is more between me and the end goal.</p>
-<p>Here&#8217;s a few of my favorite pieces of &#8220;just works&#8221; Ruby software:</p>
-<h3>Devise</h3>
-<p><code>rails g devise:install</code> and <code>rails g devise user</code> Done. You&#8217;ve got a sign in page, a user model, migration and all the goodness. I just wrote the steps for adding authentication to an app in a single sentence. That&#8217;s incredible.</p>
-<h3>Heroku</h3>
-<p>Heroku is another great example that literally takes seconds to get up and running with. <code>rails new blog</code>, <code>heroku create</code>, <code>git push heroku master</code>. Done &amp; done. Application deployed and online.</p>
-<h3>Rubygems</h3>
-<p>So you have a gem you want to make available to the world? Simple, <code>gem build whatever.gemspec</code> and <code>gem push whatever-0.0.1.gem</code>. Done. Granted, I do know this one has a Python equivalent. <code>python setup.py register</code> claims to get you the same, but my recent attempts have all failed with, &#8220;You are not allowed to store &#8216;whatever&#8217; package information&#8221;. Okay.. so.. what now?</p>
-<p>Tools are an important part of any developers day to day life. I think tools are partially why Ruby developers are typically quite productive. We see the value in good development tools and we spend time crafting them to &#8220;just work&#8221;.</p>
-<p>This is only one of the many things I admire about the Ruby community, but it&#8217;s an important one. Having efficient tools helps make an efficient developer.</p>
-    <div style="clear:both;"></div> 
-</div>
 
-            </div>
-
-        
-            <ul id="article-nav">
-            
-                <li id="previous"><a href="/page3">&laquo; Previous</a></li>
-            
-
-            
-                <li id="next"><a href="/">Next &raquo;</a></li>
-            
-            </ul>
-        
-        </div>
-
-        <div id="sidebar">
-            <p id="bio">
-                I'm Matte Noble, a Software Developer, Ruby
-                enthusiast, Metalhead and all around curious guy.
-                This is where I share things I know and learn.
-            </p>
-
-            <ul>
-                <li id="archive"><a href="/archive/">Archive</a></li>
-                <li id="rss"><a href="/atom.xml">RSS</a></li>
-                <li id="twitter"><a href="http://twitter.com/mattenoble">@mattenoble</a></li>
-                <li id="github"><a href="http://github.com/mnoble">github.com/mnoble</a></li>
-            </ul>
-        </div>
-
-        <div style="clear:both;"></div>
-    </div>
+    <ul id="archive">
+      
+      <li>
+        <a href="/2011/08/20/csstree-an-ultra-simple-css-parser/" class="title">CSSTree - An ultra-simple CSS parser</a>
+        <span>August 20, 2011</span>
+      </li>
+      
+      <li>
+        <a href="/2011/05/30/ruby-enumerables/" class="title">Ruby Enumerables</a>
+        <span>May 30, 2011</span>
+      </li>
+      
+      <li>
+        <a href="/2011/05/12/tabby/" class="title">Tabby - iTerm2 Environments</a>
+        <span>May 12, 2011</span>
+      </li>
+      
+      <li>
+        <a href="/2011/05/11/the-value-of-i-dont-know/" class="title">The Value of I Don't Know</a>
+        <span>May 11, 2011</span>
+      </li>
+      
+      <li>
+        <a href="/2011/04/24/deferred-return-values-for-rspec-stubs/" class="title">Blocky RSpec Stubbing</a>
+        <span>April 24, 2011</span>
+      </li>
+      
+      <li>
+        <a href="/2011/04/02/value-of-it-just-working/" class="title">Taking Care of Business</a>
+        <span>April 02, 2011</span>
+      </li>
+      
+      <li>
+        <a href="/2011/03/30/TADDD/" class="title">Test and Design Driven Development</a>
+        <span>March 30, 2011</span>
+      </li>
+      
+      <li>
+        <a href="/2011/03/22/forge-python-fixture-replacement/" class="title">Forge - Python Fixture Replacement</a>
+        <span>March 22, 2011</span>
+      </li>
+      
+      <li>
+        <a href="/2011/02/08/a-developers-introduction-to-puppet/" class="title">A Developer's Introduction to Puppet</a>
+        <span>February 08, 2011</span>
+      </li>
+      
+      <li>
+        <a href="/2011/01/18/new-year-new-site/" class="title">New Year, New Site</a>
+        <span>January 18, 2011</span>
+      </li>
+      
+    </ul>
+  </section>
 </body>
 </html>

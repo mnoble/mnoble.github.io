@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    RedCloth (4.2.9)
     classifier (1.3.3)
       fast-stemmer (>= 1.0.0)
     directory_watcher (1.3.2)
@@ -18,11 +19,18 @@ GEM
     rack-jekyll (0.3.5)
       jekyll
       rack
+    spox-plist (3.0.1)
+    spox-textpow (0.10.3)
+      spox-plist
+    spox-ultraviolet (0.10.5)
+      spox-textpow
     syntax (1.0.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  RedCloth
   jekyll-ultraviolet
   rack-jekyll
+  spox-ultraviolet

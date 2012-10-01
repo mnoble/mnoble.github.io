@@ -8,7 +8,7 @@ I needed something to parse a bunch of CSS and gave me a manipulatable object. I
 
 So then I made "CSSTree":https://github.com/mnoble/csstree. It's dead-simple and does next to nothing. Other than parsing CSS that is.
 
-{% uv ruby %}
+{% highlight ruby %}
 tree = CSSTree.parse("body { color: #000000; }")
 # => #<CSSTree:0x000000>
 tree.find("body").color
@@ -17,6 +17,6 @@ tree.find("body").margin = "10px"
 # => "10px"
 tree.render
 # => "body { color: #000000; margin: 10px; }
-{% enduv %}
+{% endhighlight %}
 
 And that's pretty much it. Go team!

@@ -1,4 +1,4 @@
 permalink: pretty
 pygments: true
-paginate: 3
+paginate: 1
 exclude: ["development", "config.ru", "_wip", "public/sass"]

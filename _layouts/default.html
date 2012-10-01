@@ -1,62 +1,42 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <meta name="google-site-verification" content="uPo9ejFsAXhqlhxbsrVtWkBWHQQDUGvP5lSSqj5Mb54" />
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="uPo9ejFsAXhqlhxbsrVtWkBWHQQDUGvP5lSSqj5Mb54" />
 
-    <title>{{ page.title }}</title>
+  <title>{{ page.title }}</title>
 
-    <link rel="stylesheet" type="text/css" href="/public/css/main.css" media="all">
-    <link rel="stylesheet" type="text/css" href="/public/css/clouds.css" media="all">
-    <script type="text/javascript" src="http://use.typekit.com/npn1una.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <link rel="stylesheet" type="text/css" href="/public/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/public/css/highlight.css" media="all">
+
+  <script type="text/javascript" src="http://use.typekit.com/npn1una.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
+
 <body>
-    <div id="wrap">
-        <h1>
-            <a href="/">
-                <p>MATTENOBLE</p>
-                <img src="/public/images/gem.png" alt="rubygem" />
-            </a>
-            <div style="clear:both;"></div>
-        </h1>
+  <section id="sidebar">
+    <a href="/">
+      <img src="/public/images/metal.png" alt="mattenoble" />
+    </a>
 
-        <div id="content">
-            <div id="articles">
-                {{ content }}
-            </div>
+    <section id="meta">
+      <a href="https://github.com/mnoble" class="github">github</a>
+      <a href="https://twitter.com/mattenoble" class="twitter">twitter</a>
+      <a href="/atom.xm" class="rss">rss</a>
+    </section>
+  </section>
 
-        {% if page.url != "/archive/" %}
-            <ul id="article-nav">
-            {% if paginator.next_page %}
-                <li id="previous"><a href="/page{{ paginator.next_page }}">&laquo; Previous</a></li>
-            {% endif %}
+  <section id="content">
+    {{ content }}
 
-            {% if paginator.previous_page > 1 %}
-                <li id="next"><a href="/page{{ paginator.previous_page }}">Next &raquo;</a></li>
-            {% elsif paginator.previous_page == 1 %}
-                <li id="next"><a href="/">Next &raquo;</a></li>
-            {% endif %}
-            </ul>
-        {% endif %}
-        </div>
-
-        <div id="sidebar">
-            <p id="bio">
-                I'm Matte Noble, a Software Developer, Ruby
-                enthusiast, Metalhead and all around curious guy.
-                This is where I share things I know and learn.
-            </p>
-
-            <ul>
-                <li id="archive"><a href="/archive/">Archive</a></li>
-                <li id="rss"><a href="/atom.xml">RSS</a></li>
-                <li id="twitter"><a href="http://twitter.com/mattenoble">@mattenoble</a></li>
-                <li id="github"><a href="http://github.com/mnoble">github.com/mnoble</a></li>
-            </ul>
-        </div>
-
-        <div style="clear:both;"></div>
-    </div>
+    <ul id="archive">
+      {% for post in site.posts | sort date %}
+      <li>
+        <a href="{{ post.url }}" class="title">{{ post.title }}</a>
+        <span>{{ post.date | date: "%B %d, %Y" }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
 </body>
 </html>

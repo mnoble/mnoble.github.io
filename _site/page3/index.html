@@ -1,146 +1,111 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <meta name="google-site-verification" content="uPo9ejFsAXhqlhxbsrVtWkBWHQQDUGvP5lSSqj5Mb54" />
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="uPo9ejFsAXhqlhxbsrVtWkBWHQQDUGvP5lSSqj5Mb54" />
 
-    <title>MATTENOBLE - Ruby, Software Development and other Stuff.</title>
+  <title>MATTENOBLE - Ruby, Software Development and other Stuff.</title>
 
-    <link rel="stylesheet" type="text/css" href="/public/css/main.css" media="all">
-    <link rel="stylesheet" type="text/css" href="/public/css/clouds.css" media="all">
-    <script type="text/javascript" src="http://use.typekit.com/npn1una.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <link rel="stylesheet" type="text/css" href="/public/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/public/css/highlight.css" media="all">
+
+  <script type="text/javascript" src="http://use.typekit.com/npn1una.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
+
 <body>
-    <div id="wrap">
-        <h1>
-            <a href="/">
-                <p>MATTENOBLE</p>
-                <img src="/public/images/gem.png" alt="rubygem" />
-            </a>
-            <div style="clear:both;"></div>
-        </h1>
+  <section id="sidebar">
+    <a href="/">
+      <img src="/public/images/metal.png" alt="mattenoble" />
+    </a>
 
-        <div id="content">
-            <div id="articles">
-                
+    <section id="meta">
+      <a href="https://github.com/mnoble" class="github">github</a>
+      <a href="https://twitter.com/mattenoble" class="twitter">twitter</a>
+      <a href="/atom.xm" class="rss">rss</a>
+    </section>
+  </section>
+
+  <section id="content">
+    
 <div class="article">
-    <h2><a href="/2011/03/30/TADDD/">Test and Design Driven Development</a></h2>
-    <p>For quite some time the way I&#8217;ve worked was to develop the application as if the interface didn&#8217;t matter, until it was done. Write my features, tests, etc and then when you have a functioning 1.0, slap some pretty on it. It always felt wrong, it felt unfair to the application.</p>
-<p><a href="http://rubylearning.com/blog/2010/10/05/outside-in-development/">Outside-In Development</a> is pretty awesome but while it ends up being great for features and application code, it didn&#8217;t seem right for mixing in some design work. I&#8217;ve altered the my general, outside-in, workflow to include some design time. Here&#8217;s how it goes..</p>
-<h3>Cucumber</h3>
-<p>Write a feature; keep it high level and based on value (you already know this though). Lets say you&#8217;re working on the Authentication portion of your application. You want to make sure when a user signs in, they are greeted with the message &#8220;Hey there!&#8221;.</p>
-<h3>RSpec, MiniTest, etc.</h3>
-<p>Write some controller and model tests to get rolling with the lower level login stuff. Let&#8217;s pretend you just did that. A user can sign in and they will in fact see &#8220;Hey there!&#8221;. That&#8217;s awesome, nice work. Except&#8230;</p>
-<p><img src="/public/images/taddd/crap-login.jpg" title="ugly login screen" alt="ugly login screen" /></p>
-<p>Gross. You could leave it like this for the time being and move on to other features if you so incline. I, however, can not do that anymore. Having a functioning app with a lame UI sounds as bad as having no app at all to me.</p>
-<h3>Design</h3>
-<p>At this point, it&#8217;s time to put a little shine on your application. If you&#8217;re not doing both design and development you could probably even &#8220;get lean&#8221; here and send a &#8220;card&#8221; downstream to a designer. Hmm, <code>article_ideas += 1</code>.</p>
-<p>Anyway, now that we know we have a reliable test suite for this feature, start playing with the UI. With all the cool things available these days like <span class="caps">SASS</span>, Compass, Haml, etc. this step should be fast and easy, even without Photoshop.</p>
-<p><img src="/public/images/taddd/nice-login.jpg" title="pretty login screen" alt="pretty login screen" /></p>
-<p>So now you have a well tested, functional and quite attractive sign in feature. The cool thing about this approach is that it integrates really well with the normal red, green, refactor methodology. This won&#8217;t be the last sign in feature you write, most likely, so every new one is a chance to not only refactor your code, but also the design.</p>
-<p>So if you&#8217;re a designer/developer hybrid or are tasked to doing both, try this out. It&#8217;s helped me get that abstract vision for things into a clearer light, which is always a good thing.</p>
-    <div style="clear:both;"></div> 
+    <h2>Tabby - iTerm2 Environments</h2>
+    <p>If you&#8217;ve ever created a Jekyll site with, say, <span class="caps">SASS</span> and Coffeescript,<br />
+you know how annoying it is to set up your terminal environment every time. Open a tab, cd to your project, open a new tab, <code>jekyll --server --auto</code>, open yet another tab, cd to your project, <code>sass --watch whatever.sass:whatever.css</code>, etc.</p>
+<p>I got tired of doing that multiple times per day, week, whatever. And so, <a href="https://github.com/mnoble/tabby">Tabby</a> was born.</p>
+<p>I created Tabby for two purposes, first to solve the problem described above and second, to play around with the idea of pure Ruby configuration. There&#8217;s no crazy <span class="caps">DSL</span> (sorta), no <span class="caps">YAML</span>, no hassle; just Ruby in all it&#8217;s glory.</p>
+<h3>A Quick Tutorial</h3>
+<p>With Tabby, you set up <em>Projects</em>. Projects are just collections of iTerm2 tabs and what each one runs. Let&#8217;s walk through creating my blog environment. First, create the project:</p>
+<p>Liquid error: Output for xhtml in clouds style is not yet implemented</p>
+<p>This will open up your new project in whatever you have <code>$EDITOR</code> set to. Tabby assumes you use <code>~/Dev</code> as your project directory because, well frankly, I do. It gives you a skeleton for your project right off the bat:</p>
+<p>Liquid error: Output for xhtml in clouds style is not yet implemented</p>
+<p><code>basedir</code> is the root of your project. Tabby takes each method in your project class and makes it a tab. The tab gets the name of the method. So above, we&#8217;d have a tab created and titled &#8220;server&#8221;. It would immediately run <code>rails s</code>.</p>
+<p>Since we&#8217;re making a Jekyll blog, we can get rid of the Rails tab. We do want to have the Jekyll server running though and also <span class="caps">SASS</span> and Coffeescript.</p>
+<p>Liquid error: Output for xhtml in clouds style is not yet implemented</p>
+<p>So now every time you go to work on your blog, just kick it off with:</p>
+<p>Liquid error: Output for xhtml in clouds style is not yet implemented</p>
+<p>and you&#8217;ll get:</p>
+<p><img src="/public/images/tabby.jpg" title="tabby blog environment" alt="tabby blog environment" /></p>
+<h3>Usage</h3>
+<p>Here&#8217;s a quick run down of the other commands, straight from the horse&#8217;s mouth:</p>
+<p>Liquid error: Output for xhtml in clouds style is not yet implemented</p>
 </div>
 
-<div class="article">
-    <h2><a href="/2011/03/22/forge-python-fixture-replacement/">Forge - Python Fixture Replacement</a></h2>
-    <p>I found myself wanting a simple way to create objects with fake data for unit tests, in Python. I always liked <a href="https://github.com/thoughtbot/factory_girl">factory_girl</a> and the way it keeps things clean and coherent. However, Ruby libraries were no help to me here, directly at least, I needed a Python solution.</p>
-<p>I wanted something that wasn&#8217;t fixtures. First of all, I don&#8217;t think you should need a database to run unit tests. If you&#8217;re writing simple, modular code you should be able to give input and test output. So my answer to that need is <a href="https://github.com/mnoble/forge">Forge</a>.</p>
-<p>Forge is a very simple object creator loosely based on factory_girl. You define factories and then you build them. What I really like about this approach is that it makes your intent quite obvious. Testing something to with a confirmed user? <code>confirmed_user = Forge('confirmed_user')</code>. Simple, clean and easy to follow.</p>
-<p>If you&#8217;re familiar with factory_girl at all, this will be nothing new for you. For those of you who aren&#8217;t, here&#8217;s a quick rundown on how to use Forge.</p>
-<h3>Defining Factories</h3>
-<p>First create a <code>project/test/factories</code> directory. You can either define all your factories in the <code>__init__.py</code> file or in separate files then import them in <code>__init__.py</code>.</p>
-<pre class="clouds">
-<span class="Comment"><span class="Comment">#</span> project/test/factories/user.py</span>
-<span class="Keyword">from</span> forge <span class="Keyword">import</span> Forge
 
-<span class="Keyword">with</span> Forge.define(<span class="String"><span class="String">'</span>user<span class="String">'</span></span>) <span class="Keyword">as</span> f:
-    f.name      <span class="KeywordOperator">=</span> <span class="String"><span class="String">'</span>Matte<span class="String">'</span></span>
-    f.age       <span class="KeywordOperator">=</span> <span class="Number">24</span>
-    f.confirmed <span class="KeywordOperator">=</span> <span class="BuiltInConstant">False</span>
 
-<span class="Keyword">with</span> Forge.define(<span class="String"><span class="String">'</span>confirmed_user<span class="String">'</span></span>) <span class="Keyword">as</span> f:
-    f.name      <span class="KeywordOperator">=</span> <span class="String"><span class="String">'</span>Randy<span class="String">'</span></span>
-    f.age       <span class="KeywordOperator">=</span> <span class="Number">67</span>
-    f.confirmed <span class="KeywordOperator">=</span> <span class="BuiltInConstant">True</span>
-</pre><pre class="clouds">
-<span class="Comment"><span class="Comment">#</span> project/test/factories/__init__.py</span>
-<span class="Keyword">import</span> user
-</pre><h3>Building Forged Objects</h3>
-<p>So now that you have a bank of factories for the different scenarios you&#8217;re testing. Time to get down to business. The <span class="caps">API</span> for creating factory objects mimics factory_girl&#8217;s:</p>
-<pre class="clouds">
-<span class="Keyword">import</span> project.test.factories
-<span class="Keyword">from</span> forge <span class="Keyword">import</span> Forge
-
-user <span class="KeywordOperator">=</span> Forge(<span class="String"><span class="String">'</span>user<span class="String">'</span></span>)
-<span class="Comment"><span class="Comment">#</span> OR</span>
-user <span class="KeywordOperator">=</span> Forge.build(<span class="String"><span class="String">'</span>user<span class="String">'</span></span>)
-</pre><p>Unlike factory_girl, Forge will never put your objects into the database. It doesn&#8217;t even know how.</p>
-<h3>Using Models</h3>
-<p>When you&#8217;re working with an <span class="caps">ORM</span> you usually want objects that are as close to what it returns from a database query. Most of the time this is just achieved by instantiating a model class with your factory data. And that is exactly what Forge does. You can configure Forge to use a specific module to retrieve models from:</p>
-<pre class="clouds">
-Forge.configure(<span class="FunctionArgument">models</span><span class="KeywordOperator">=</span><span class="String"><span class="String">'</span>project.models<span class="String">'</span></span>)
-</pre><p>Now, when you try to build a <code>user</code> factory, it will try to import <code>project.models.User</code>. If it exists, it will create an instance of it and apply the factory data to it. As long as your model&#8217;s constructor takes <code>**kwargs</code> of attributes, Forge should work just fine.</p>
-<h3>Wrap Up</h3>
-<p>Forge isn&#8217;t anything fancy, but it provides a uniform way to define and create real objects for tests. It keeps things organized, the intent clear and works out of the box. If you find yourself wanting to ditch the database in your unit tests, check it out.</p>
-    <div style="clear:both;"></div> 
-</div>
-
-<div class="article">
-    <h2><a href="/2011/02/08/a-developers-introduction-to-puppet/">A Developer's Introduction to Puppet</a></h2>
-    <p><img src="/public/images/sock-puppet.jpg" class="right" title="Puppet" alt="Puppet" /></p>
-<p><a href="http://www.puppetlabs.com/puppet/introduction/">Puppet</a> is one of those things most Rubyists have probably heard of, but few know very well. I&#8217;ve recently started using it in conjunction with Vagrant and found myself wanting a consolidated explanation of it&#8217;s components. So, here it is!</p>
-<h3>Nodes</h3>
-<p>A node represents a specific type of machine. It defines how, and with what, that type of server gets provisioned. Examples nodes would be like a web server, a mail server or an <span class="caps">LDAP</span> server.</p>
-<h3>Modules</h3>
-<p>Puppet modules are much like Ruby modules. They&#8217;re an organization tool which DRYs up your Puppet configs. Modules contain Classes, Templates, Files, etc. The Puppet site explains it well:</p>
-<blockquote>
-<p>Modules are reusable, sharable units of Puppet code. They can automate tasks such as setting up a database, web server, or mail server.</p>
-</blockquote>
-<h3>Classes</h3>
-<p>Classes are the actual unit you can include into <em>nodes</em> or even other classes. Classes support a simplified type of inheritance. Say you want to use nginx as a web server one place, but as a proxy another. You&#8217;d have a base class, <code>nginx</code>, then a <code>nginx::proxy</code> class which modifies the base to act as a proxy server.</p>
-<h3>Resources</h3>
-<p>Resources are what classes contain. They&#8217;re a single item that is part of the overall configuration of a class. Take our <code>nginx</code> example above, to provision nginx on a machine we need a couple things. We need to ensure the package is installed, we want to make sure the service is running and we&#8217;d like to define a custom <code>nginx.conf</code>. These would all be resource definitions.</p>
-<h3>Templates</h3>
-<p>Templates are any file you want to put on the machine being provisioned. This can range from a <code>nginx.conf</code> file to <code>/etc/hosts</code>. You can include dynamic data by specifying class variables in your.. you guessed it, classes! These files are just <em>erb</em> so any normal Ruby goes.</p>
-<h3>Just the Surface</h3>
-<p>This is a very, very basic overview of Puppet. It&#8217;s an extremely powerful platform that can really make your life easier. I didn&#8217;t cover any examples of the Puppet <span class="caps">DSL</span> on purpose, I want this to just be a basic primer to Puppet&#8217;s concepts.</p>
-<p>Check out <a href="http://docs.puppetlabs.com/">Puppet Labs&#8217; Documentation</a> for more information. Also, take a look into their <a href="http://forge.puppetlabs.com/">Module Forge</a> for preexisting modules you can use right now, with barely any work.</p>
-    <div style="clear:both;"></div> 
-</div>
-
-            </div>
-
-        
-            <ul id="article-nav">
-            
-                <li id="previous"><a href="/page4">&laquo; Previous</a></li>
-            
-
-            
-                <li id="next"><a href="/page2">Next &raquo;</a></li>
-            
-            </ul>
-        
-        </div>
-
-        <div id="sidebar">
-            <p id="bio">
-                I'm Matte Noble, a Software Developer, Ruby
-                enthusiast, Metalhead and all around curious guy.
-                This is where I share things I know and learn.
-            </p>
-
-            <ul>
-                <li id="archive"><a href="/archive/">Archive</a></li>
-                <li id="rss"><a href="/atom.xml">RSS</a></li>
-                <li id="twitter"><a href="http://twitter.com/mattenoble">@mattenoble</a></li>
-                <li id="github"><a href="http://github.com/mnoble">github.com/mnoble</a></li>
-            </ul>
-        </div>
-
-        <div style="clear:both;"></div>
-    </div>
+    <ul id="archive">
+      
+      <li>
+        <a href="/2011/08/20/csstree-an-ultra-simple-css-parser/" class="title">CSSTree - An ultra-simple CSS parser</a>
+        <span>August 20, 2011</span>
+      </li>
+      
+      <li>
+        <a href="/2011/05/30/ruby-enumerables/" class="title">Ruby Enumerables</a>
+        <span>May 30, 2011</span>
+      </li>
+      
+      <li>
+        <a href="/2011/05/12/tabby/" class="title">Tabby - iTerm2 Environments</a>
+        <span>May 12, 2011</span>
+      </li>
+      
+      <li>
+        <a href="/2011/05/11/the-value-of-i-dont-know/" class="title">The Value of I Don't Know</a>
+        <span>May 11, 2011</span>
+      </li>
+      
+      <li>
+        <a href="/2011/04/24/deferred-return-values-for-rspec-stubs/" class="title">Blocky RSpec Stubbing</a>
+        <span>April 24, 2011</span>
+      </li>
+      
+      <li>
+        <a href="/2011/04/02/value-of-it-just-working/" class="title">Taking Care of Business</a>
+        <span>April 02, 2011</span>
+      </li>
+      
+      <li>
+        <a href="/2011/03/30/TADDD/" class="title">Test and Design Driven Development</a>
+        <span>March 30, 2011</span>
+      </li>
+      
+      <li>
+        <a href="/2011/03/22/forge-python-fixture-replacement/" class="title">Forge - Python Fixture Replacement</a>
+        <span>March 22, 2011</span>
+      </li>
+      
+      <li>
+        <a href="/2011/02/08/a-developers-introduction-to-puppet/" class="title">A Developer's Introduction to Puppet</a>
+        <span>February 08, 2011</span>
+      </li>
+      
+      <li>
+        <a href="/2011/01/18/new-year-new-site/" class="title">New Year, New Site</a>
+        <span>January 18, 2011</span>
+      </li>
+      
+    </ul>
+  </section>
 </body>
 </html>

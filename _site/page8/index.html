@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="uPo9ejFsAXhqlhxbsrVtWkBWHQQDUGvP5lSSqj5Mb54" />
 
-  <title>Forge - Python Fixture Replacement</title>
+  <title>MATTENOBLE - Ruby, Software Development and other Stuff.</title>
 
   <link rel="stylesheet" type="text/css" href="/public/css/main.css" media="all">
   <link rel="stylesheet" type="text/css" href="/public/css/highlight.css" media="all">
@@ -27,8 +27,9 @@
   </section>
 
   <section id="content">
-    <div class="article">
-    <h1>Forge - Python Fixture Replacement</h1>
+    
+<div class="article">
+    <h2>Forge - Python Fixture Replacement</h2>
     <p>I found myself wanting a simple way to create objects with fake data for unit tests, in Python. I always liked <a href="https://github.com/thoughtbot/factory_girl">factory_girl</a> and the way it keeps things clean and coherent. However, Ruby libraries were no help to me here, directly at least, I needed a Python solution.</p>
 <p>I wanted something that wasn&#8217;t fixtures. First of all, I don&#8217;t think you should need a database to run unit tests. If you&#8217;re writing simple, modular code you should be able to give input and test output. So my answer to that need is <a href="https://github.com/mnoble/forge">Forge</a>.</p>
 <p>Forge is a very simple object creator loosely based on factory_girl. You define factories and then you build them. What I really like about this approach is that it makes your intent quite obvious. Testing something to with a confirmed user? <code>confirmed_user = Forge('confirmed_user')</code>. Simple, clean and easy to follow.</p>
@@ -49,14 +50,7 @@
 <p>Forge isn&#8217;t anything fancy, but it provides a uniform way to define and create real objects for tests. It keeps things organized, the intent clear and works out of the box. If you find yourself wanting to ditch the database in your unit tests, check it out.</p>
 </div>
 
-<ul id="article-nav">
 
-    <li id="previous"><a href="/2011/02/08/a-developers-introduction-to-puppet/">&laquo; Previous</a></li>
-
-
-    <li id="next"><a href="/2011/03/30/TADDD/">Next &raquo;</a></li>
-
-</ul>
 
     <ul id="archive">
       

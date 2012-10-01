@@ -3,7 +3,7 @@
  <title>Matte Noble</title>
  <link href="http://mattenoble.com/atom.xml" rel="self"/>
  <link href="http://mattenoble.com/"/>
- <updated>2012-02-23T11:00:41-05:00</updated>
+ <updated>2012-09-30T21:59:58-04:00</updated>
  <id>http://mattenoble.com/</id>
  <author>
    <name>Matte Noble</name>
@@ -17,16 +17,16 @@
      <id>http://mattenoble.com/2011/08/20/csstree-an-ultra-simple-css-parser</id>
      <content type="html">&lt;p&gt;I needed something to parse a bunch of &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; and gave me a manipulatable object. I tried a couple parsers and none of them worked. It wasn&amp;#8217;t that they didn&amp;#8217;t do everything I needed, they just flat out didn&amp;#8217;t work at all.&lt;/p&gt;
 &lt;p&gt;So then I made &lt;a href=&quot;https://github.com/mnoble/csstree&quot;&gt;CSSTree&lt;/a&gt;. It&amp;#8217;s dead-simple and does next to nothing. Other than parsing &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; that is.&lt;/p&gt;
-&lt;pre class=&quot;clouds&quot;&gt;
-tree &lt;span class=&quot;KeywordOperator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;Variable&quot;&gt;CSSTree&lt;/span&gt;.&lt;span class=&quot;FunctionName&quot;&gt;parse&lt;/span&gt;(&lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;body { color: #000000; }&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;)
-&lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; =&amp;gt; #&amp;lt;CSSTree:0x000000&amp;gt;&lt;/span&gt;
-tree.&lt;span class=&quot;FunctionName&quot;&gt;find&lt;/span&gt;(&lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;body&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;).&lt;span class=&quot;FunctionName&quot;&gt;color&lt;/span&gt;
-&lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; =&amp;gt; &amp;quot;#000000&amp;quot;&lt;/span&gt;
-tree.&lt;span class=&quot;FunctionName&quot;&gt;find&lt;/span&gt;(&lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;body&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;).&lt;span class=&quot;FunctionName&quot;&gt;margin&lt;/span&gt; &lt;span class=&quot;KeywordOperator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;10px&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; 
-&lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; =&amp;gt; &amp;quot;10px&amp;quot;&lt;/span&gt;
-tree.&lt;span class=&quot;FunctionName&quot;&gt;render&lt;/span&gt;
-&lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; =&amp;gt; &amp;quot;body { color: #000000; margin: 10px; }&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;And that&amp;#8217;s pretty much it. Go team!&lt;/p&gt;</content>
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;tree&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CSSTree&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;body { color: #000000; }&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# =&amp;gt; #&amp;lt;CSSTree:0x000000&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;tree&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;body&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# =&amp;gt; &amp;quot;#000000&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;tree&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;body&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;margin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;10px&amp;quot;&lt;/span&gt; 
+&lt;span class=&quot;c1&quot;&gt;# =&amp;gt; &amp;quot;10px&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;tree&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;render&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# =&amp;gt; &amp;quot;body { color: #000000; margin: 10px; }&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;&lt;p&gt;And that&amp;#8217;s pretty much it. Go team!&lt;/p&gt;</content>
    </entry>
  
    <entry>
@@ -39,19 +39,8 @@ tree.&lt;span class=&quot;FunctionName&quot;&gt;render&lt;/span&gt;
 &lt;p&gt;The Ruby stdlib has this handy module named &lt;code&gt;Enumerable&lt;/code&gt;. It basically means that if you mix it into a class which responds to &lt;code&gt;each&lt;/code&gt;, you get all the fanciness that is &lt;code&gt;select&lt;/code&gt;, &lt;code&gt;map&lt;/code&gt;, &lt;code&gt;all?&lt;/code&gt;, etc.&lt;/p&gt;
 &lt;p&gt;This sounded odd to me at first. How would implementing the method you use to iterate an object&amp;#8230; make it iterable? It only feels weird because we&amp;#8217;re used to &lt;code&gt;each&lt;/code&gt; being an interface, not an implementation. It plays both roles!&lt;/p&gt;
 &lt;h3&gt;An Egg Sample&lt;/h3&gt;
-&lt;pre class=&quot;clouds&quot;&gt;
-&lt;span class=&quot;Keyword&quot;&gt;class&lt;/span&gt; Carton
-  &lt;span class=&quot;Keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;Variable&quot;&gt;Enumerable&lt;/span&gt;
-
-  &lt;span class=&quot;Keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;FunctionName&quot;&gt;each&lt;/span&gt;
-    &lt;span class=&quot;Variable&quot;&gt;&lt;span class=&quot;Variable&quot;&gt;@&lt;/span&gt;eggs&lt;/span&gt;.&lt;span class=&quot;FunctionName&quot;&gt;each&lt;/span&gt; { |&lt;span class=&quot;Variable&quot;&gt;egg&lt;/span&gt;| &lt;span class=&quot;Keyword&quot;&gt;yield&lt;/span&gt; egg }
-  &lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
-
-  &lt;span class=&quot;Keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;FunctionName&quot;&gt;drop&lt;/span&gt;
-    &lt;span class=&quot;Variable&quot;&gt;&lt;span class=&quot;Variable&quot;&gt;@&lt;/span&gt;eggs&lt;/span&gt; &lt;span class=&quot;KeywordOperator&quot;&gt;=&lt;/span&gt; []
-  &lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;Now whenever you create a Carton object with a bunch of eggs, you&amp;#8217;ll be able to iterate over those eggs one at a time. The eggs themselves can live in an Array, Hash, whatever. The important thing is to yield them one at a time via &lt;code&gt;each&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
+&lt;p&gt;Now whenever you create a Carton object with a bunch of eggs, you&amp;#8217;ll be able to iterate over those eggs one at a time. The eggs themselves can live in an Array, Hash, whatever. The important thing is to yield them one at a time via &lt;code&gt;each&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;With the above code, a Carton object can now do everything any other enumerable object can, but with the added bonus of breaking all over the fucking parking lot&amp;#8230;&lt;/p&gt;</content>
    </entry>
  
@@ -66,48 +55,19 @@ you know how annoying it is to set up your terminal environment every time. Open
 &lt;p&gt;I created Tabby for two purposes, first to solve the problem described above and second, to play around with the idea of pure Ruby configuration. There&amp;#8217;s no crazy &lt;span class=&quot;caps&quot;&gt;DSL&lt;/span&gt; (sorta), no &lt;span class=&quot;caps&quot;&gt;YAML&lt;/span&gt;, no hassle; just Ruby in all it&amp;#8217;s glory.&lt;/p&gt;
 &lt;h3&gt;A Quick Tutorial&lt;/h3&gt;
 &lt;p&gt;With Tabby, you set up &lt;em&gt;Projects&lt;/em&gt;. Projects are just collections of iTerm2 tabs and what each one runs. Let&amp;#8217;s walk through creating my blog environment. First, create the project:&lt;/p&gt;
-&lt;pre class=&quot;clouds&quot;&gt;
-$ tabby create blog
-&lt;/pre&gt;&lt;p&gt;This will open up your new project in whatever you have &lt;code&gt;$EDITOR&lt;/code&gt; set to. Tabby assumes you use &lt;code&gt;~/Dev&lt;/code&gt; as your project directory because, well frankly, I do. It gives you a skeleton for your project right off the bat:&lt;/p&gt;
-&lt;pre class=&quot;clouds&quot;&gt;
-&lt;span class=&quot;Keyword&quot;&gt;class&lt;/span&gt; Blog&lt;span class=&quot;InheritedClass&quot;&gt; &lt;span class=&quot;InheritedClass&quot;&gt;&amp;lt;&lt;/span&gt; Tabby::Base&lt;/span&gt;
-  basedir &lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;~/Dev/blog&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-
-  &lt;span class=&quot;Keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;FunctionName&quot;&gt;server&lt;/span&gt;
-    exec &lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;rails s&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;&lt;code&gt;basedir&lt;/code&gt; is the root of your project. Tabby takes each method in your project class and makes it a tab. The tab gets the name of the method. So above, we&amp;#8217;d have a tab created and titled &amp;#8220;server&amp;#8221;. It would immediately run &lt;code&gt;rails s&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
+&lt;p&gt;This will open up your new project in whatever you have &lt;code&gt;$EDITOR&lt;/code&gt; set to. Tabby assumes you use &lt;code&gt;~/Dev&lt;/code&gt; as your project directory because, well frankly, I do. It gives you a skeleton for your project right off the bat:&lt;/p&gt;
+&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;basedir&lt;/code&gt; is the root of your project. Tabby takes each method in your project class and makes it a tab. The tab gets the name of the method. So above, we&amp;#8217;d have a tab created and titled &amp;#8220;server&amp;#8221;. It would immediately run &lt;code&gt;rails s&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Since we&amp;#8217;re making a Jekyll blog, we can get rid of the Rails tab. We do want to have the Jekyll server running though and also &lt;span class=&quot;caps&quot;&gt;SASS&lt;/span&gt; and Coffeescript.&lt;/p&gt;
-&lt;pre class=&quot;clouds&quot;&gt;
-&lt;span class=&quot;Keyword&quot;&gt;class&lt;/span&gt; Blog&lt;span class=&quot;InheritedClass&quot;&gt; &lt;span class=&quot;InheritedClass&quot;&gt;&amp;lt;&lt;/span&gt; Tabby::Base&lt;/span&gt;
-  basedir &lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;~/Dev/blog&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-
-  &lt;span class=&quot;Keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;FunctionName&quot;&gt;jekyll&lt;/span&gt;
-    exec &lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;jekyll --server --auto&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
-
-  &lt;span class=&quot;Keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;FunctionName&quot;&gt;sass&lt;/span&gt;
-    exec &lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;sass --watch public/sass:public/stylesheets&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
-
-  &lt;span class=&quot;Keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;FunctionName&quot;&gt;coffee&lt;/span&gt;
-    exec &lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;coffee --watch -c public/coffee/ -o public/javascript/&lt;span class=&quot;String&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;Keyword&quot;&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;So now every time you go to work on your blog, just kick it off with:&lt;/p&gt;
-&lt;pre class=&quot;clouds&quot;&gt;
-$ tabby open blog
-&lt;/pre&gt;&lt;p&gt;and you&amp;#8217;ll get:&lt;/p&gt;
+&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
+&lt;p&gt;So now every time you go to work on your blog, just kick it off with:&lt;/p&gt;
+&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
+&lt;p&gt;and you&amp;#8217;ll get:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/public/images/tabby.jpg&quot; title=&quot;tabby blog environment&quot; alt=&quot;tabby blog environment&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;Usage&lt;/h3&gt;
 &lt;p&gt;Here&amp;#8217;s a quick run down of the other commands, straight from the horse&amp;#8217;s mouth:&lt;/p&gt;
-&lt;pre class=&quot;clouds&quot;&gt;
-tabby create [project]  &lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; Creates an empty project config.&lt;/span&gt;
-tabby edit [project]    &lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; Opens the project config with $EDITOR.&lt;/span&gt;
-tabby list              &lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; List all projects.&lt;/span&gt;
-tabby open [project]    &lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; Starts up the environment for a project.&lt;/span&gt;
-&lt;/pre&gt;</content>
+&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;</content>
    </entry>
  
    <entry>
@@ -130,15 +90,13 @@ tabby open [project]    &lt;span class=&quot;Comment&quot;&gt;&lt;span class=&qu
      <id>http://mattenoble.com/2011/04/24/deferred-return-values-for-rspec-stubs</id>
      <content type="html">&lt;p&gt;While working on &lt;a href=&quot;http://github.com/mnoble/tabby&quot;&gt;Tabby&lt;/a&gt; I hit an issue when stubbing Tempfile.new. Instead of creating a Tempfile I wanted to just use a StringIO-ish (&lt;code&gt;FakeFile&lt;/code&gt;) object so I didn&amp;#8217;t write to the filesystem.&lt;/p&gt;
 &lt;h3&gt;The Problem&lt;/h3&gt;
-&lt;pre class=&quot;clouds&quot;&gt;
-&lt;span class=&quot;LibraryClassType&quot;&gt;Tempfile&lt;/span&gt;.&lt;span class=&quot;FunctionName&quot;&gt;stub&lt;/span&gt;(&lt;span class=&quot;UserDefinedConstant&quot;&gt;&lt;span class=&quot;UserDefinedConstant&quot;&gt;:&lt;/span&gt;new&lt;/span&gt;).&lt;span class=&quot;FunctionName&quot;&gt;and_return&lt;/span&gt;(&lt;span class=&quot;LibraryClassType&quot;&gt;FakeFile&lt;/span&gt;.&lt;span class=&quot;FunctionName&quot;&gt;new&lt;/span&gt;)
-&lt;/pre&gt;&lt;p&gt;The problem is that Tabby creates a new Tempfile for every tab it needs to make, meaning it can be multiple times depending on the setup.&lt;/p&gt;
+&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
+&lt;p&gt;The problem is that Tabby creates a new Tempfile for every tab it needs to make, meaning it can be multiple times depending on the setup.&lt;/p&gt;
 &lt;p&gt;So one of the setups in my tests has two tabs. For the first tab, my FakeFile object was opened, written to and closed. The next tab did the same, to that same exact FakeFile instance. Since it was already closed, I got &lt;code&gt;IOError: not opened for writing&lt;/code&gt;. Lame.&lt;/p&gt;
 &lt;h3&gt;The Solution&lt;/h3&gt;
 &lt;p&gt;RSpec&amp;#8217;s &lt;code&gt;and_returns&lt;/code&gt; takes a block, that is evaluated when the stubbed method is called. This way it&amp;#8217;s invoked from a different context each time, giving us a brand new FakeFile each time.&lt;/p&gt;
-&lt;pre class=&quot;clouds&quot;&gt;
-&lt;span class=&quot;LibraryClassType&quot;&gt;Tempfile&lt;/span&gt;.&lt;span class=&quot;FunctionName&quot;&gt;stub&lt;/span&gt;(&lt;span class=&quot;UserDefinedConstant&quot;&gt;&lt;span class=&quot;UserDefinedConstant&quot;&gt;:&lt;/span&gt;new&lt;/span&gt;).&lt;span class=&quot;FunctionName&quot;&gt;and_return&lt;/span&gt; { &lt;span class=&quot;LibraryClassType&quot;&gt;FakeFile&lt;/span&gt;.&lt;span class=&quot;FunctionName&quot;&gt;new&lt;/span&gt; }
-&lt;/pre&gt;&lt;p&gt;So if you have a stub that needs to return the same type of object, but a brand spank&amp;#8217;n new instance of it each time, use a block.&lt;/p&gt;</content>
+&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
+&lt;p&gt;So if you have a stub that needs to return the same type of object, but a brand spank&amp;#8217;n new instance of it each time, use a block.&lt;/p&gt;</content>
    </entry>
  
    <entry>
@@ -191,37 +149,16 @@ tabby open [project]    &lt;span class=&quot;Comment&quot;&gt;&lt;span class=&qu
 &lt;p&gt;If you&amp;#8217;re familiar with factory_girl at all, this will be nothing new for you. For those of you who aren&amp;#8217;t, here&amp;#8217;s a quick rundown on how to use Forge.&lt;/p&gt;
 &lt;h3&gt;Defining Factories&lt;/h3&gt;
 &lt;p&gt;First create a &lt;code&gt;project/test/factories&lt;/code&gt; directory. You can either define all your factories in the &lt;code&gt;__init__.py&lt;/code&gt; file or in separate files then import them in &lt;code&gt;__init__.py&lt;/code&gt;.&lt;/p&gt;
-&lt;pre class=&quot;clouds&quot;&gt;
-&lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; project/test/factories/user.py&lt;/span&gt;
-&lt;span class=&quot;Keyword&quot;&gt;from&lt;/span&gt; forge &lt;span class=&quot;Keyword&quot;&gt;import&lt;/span&gt; Forge
-
-&lt;span class=&quot;Keyword&quot;&gt;with&lt;/span&gt; Forge.define(&lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;'&lt;/span&gt;user&lt;span class=&quot;String&quot;&gt;'&lt;/span&gt;&lt;/span&gt;) &lt;span class=&quot;Keyword&quot;&gt;as&lt;/span&gt; f:
-    f.name      &lt;span class=&quot;KeywordOperator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;'&lt;/span&gt;Matte&lt;span class=&quot;String&quot;&gt;'&lt;/span&gt;&lt;/span&gt;
-    f.age       &lt;span class=&quot;KeywordOperator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;Number&quot;&gt;24&lt;/span&gt;
-    f.confirmed &lt;span class=&quot;KeywordOperator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;BuiltInConstant&quot;&gt;False&lt;/span&gt;
-
-&lt;span class=&quot;Keyword&quot;&gt;with&lt;/span&gt; Forge.define(&lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;'&lt;/span&gt;confirmed_user&lt;span class=&quot;String&quot;&gt;'&lt;/span&gt;&lt;/span&gt;) &lt;span class=&quot;Keyword&quot;&gt;as&lt;/span&gt; f:
-    f.name      &lt;span class=&quot;KeywordOperator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;'&lt;/span&gt;Randy&lt;span class=&quot;String&quot;&gt;'&lt;/span&gt;&lt;/span&gt;
-    f.age       &lt;span class=&quot;KeywordOperator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;Number&quot;&gt;67&lt;/span&gt;
-    f.confirmed &lt;span class=&quot;KeywordOperator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;BuiltInConstant&quot;&gt;True&lt;/span&gt;
-&lt;/pre&gt;&lt;pre class=&quot;clouds&quot;&gt;
-&lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; project/test/factories/__init__.py&lt;/span&gt;
-&lt;span class=&quot;Keyword&quot;&gt;import&lt;/span&gt; user
-&lt;/pre&gt;&lt;h3&gt;Building Forged Objects&lt;/h3&gt;
+&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
+&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
+&lt;h3&gt;Building Forged Objects&lt;/h3&gt;
 &lt;p&gt;So now that you have a bank of factories for the different scenarios you&amp;#8217;re testing. Time to get down to business. The &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; for creating factory objects mimics factory_girl&amp;#8217;s:&lt;/p&gt;
-&lt;pre class=&quot;clouds&quot;&gt;
-&lt;span class=&quot;Keyword&quot;&gt;import&lt;/span&gt; project.test.factories
-&lt;span class=&quot;Keyword&quot;&gt;from&lt;/span&gt; forge &lt;span class=&quot;Keyword&quot;&gt;import&lt;/span&gt; Forge
-
-user &lt;span class=&quot;KeywordOperator&quot;&gt;=&lt;/span&gt; Forge(&lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;'&lt;/span&gt;user&lt;span class=&quot;String&quot;&gt;'&lt;/span&gt;&lt;/span&gt;)
-&lt;span class=&quot;Comment&quot;&gt;&lt;span class=&quot;Comment&quot;&gt;#&lt;/span&gt; OR&lt;/span&gt;
-user &lt;span class=&quot;KeywordOperator&quot;&gt;=&lt;/span&gt; Forge.build(&lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;'&lt;/span&gt;user&lt;span class=&quot;String&quot;&gt;'&lt;/span&gt;&lt;/span&gt;)
-&lt;/pre&gt;&lt;p&gt;Unlike factory_girl, Forge will never put your objects into the database. It doesn&amp;#8217;t even know how.&lt;/p&gt;
+&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
+&lt;p&gt;Unlike factory_girl, Forge will never put your objects into the database. It doesn&amp;#8217;t even know how.&lt;/p&gt;
 &lt;h3&gt;Using Models&lt;/h3&gt;
 &lt;p&gt;When you&amp;#8217;re working with an &lt;span class=&quot;caps&quot;&gt;ORM&lt;/span&gt; you usually want objects that are as close to what it returns from a database query. Most of the time this is just achieved by instantiating a model class with your factory data. And that is exactly what Forge does. You can configure Forge to use a specific module to retrieve models from:&lt;/p&gt;
-&lt;pre class=&quot;clouds&quot;&gt;
-Forge.configure(&lt;span class=&quot;FunctionArgument&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;KeywordOperator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;String&quot;&gt;&lt;span class=&quot;String&quot;&gt;'&lt;/span&gt;project.models&lt;span class=&quot;String&quot;&gt;'&lt;/span&gt;&lt;/span&gt;)
-&lt;/pre&gt;&lt;p&gt;Now, when you try to build a &lt;code&gt;user&lt;/code&gt; factory, it will try to import &lt;code&gt;project.models.User&lt;/code&gt;. If it exists, it will create an instance of it and apply the factory data to it. As long as your model&amp;#8217;s constructor takes &lt;code&gt;**kwargs&lt;/code&gt; of attributes, Forge should work just fine.&lt;/p&gt;
+&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
+&lt;p&gt;Now, when you try to build a &lt;code&gt;user&lt;/code&gt; factory, it will try to import &lt;code&gt;project.models.User&lt;/code&gt;. If it exists, it will create an instance of it and apply the factory data to it. As long as your model&amp;#8217;s constructor takes &lt;code&gt;**kwargs&lt;/code&gt; of attributes, Forge should work just fine.&lt;/p&gt;
 &lt;h3&gt;Wrap Up&lt;/h3&gt;
 &lt;p&gt;Forge isn&amp;#8217;t anything fancy, but it provides a uniform way to define and create real objects for tests. It keeps things organized, the intent clear and works out of the box. If you find yourself wanting to ditch the database in your unit tests, check it out.&lt;/p&gt;</content>
    </entry>

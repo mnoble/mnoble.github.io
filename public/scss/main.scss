@@ -2,7 +2,8 @@
   margin: 0;
   padding: 0;
   outline: 0;
-  border: 0; }
+  border: 0;
+}
 
 body {
   color: #111111;
@@ -10,63 +11,90 @@ body {
   font-weight: normal;
   font-size: 18px;
   line-height: 1.7em;
-  padding: 10px; }
+  padding: 10px;
+}
 
 a {
   text-decoration: none;
-  color: #227CE8; }
+  color: #227CE8;
+}
 
 a:hover {
-  text-decoration: underline; }
+  text-decoration: underline;
+}
 
 #sidebar {
   float: left;
-  width: 144px; }
-  #sidebar #meta {
+  width: 144px;
+
+  #meta {
     width: 63px;
-    margin: 0 auto; }
-  #sidebar #meta a {
+    margin: 0 auto;
+  }
+
+  #meta a {
     display: block;
     float: left;
     width: 16px;
     height: 16px;
     margin-right: 5px;
-    text-indent: -9999px; }
-  #sidebar #meta a.github {
-    background: url("/public/images/github.png") no-repeat; }
-  #sidebar #meta a.twitter {
-    background: url("/public/images/twitter.png") no-repeat; }
-  #sidebar #meta a.rss {
-    background: url("/public/images/feed.png") no-repeat; }
+    text-indent: -9999px;
+  }
+
+  #meta a.github {
+    background: url("/public/images/github.png") no-repeat;
+  }
+
+  #meta a.twitter {
+    background: url("/public/images/twitter.png") no-repeat;
+  }
+
+  #meta a.rss {
+    background: url("/public/images/feed.png") no-repeat;
+  }
+}
 
 #content {
   float: left;
   width: 600px;
-  margin: 42px 0 0 25px; }
-  #content h2 {
+  margin: 42px 0 0 25px;
+
+  h2 {
     font-family: "junction-1", "junction-2", sans-serif;
     font-weight: normal;
-    font-size: 24px; }
-  #content .highlight {
+    font-size:  24px;
+  }
+
+  .highlight {
     font-family: Consolas, "Liberation Mono", Courier, monospace;
     font-size: 13px;
     line-height: 19px;
     background: #F8F8F8;
     padding: 6px 10px;
     margin: 1.7em 0;
-    border: 1px solid #EEEEEE; }
-  #content #archive {
+    border: 1px solid #EEEEEE;
+  }
+
+  #archive {
     list-style: none;
     font-family: Helvetica, sans-serif;
     font-size: 12px;
-    margin-top: 25px; }
-    #content #archive li {
+    margin-top: 25px;
+
+    li {
       border-top: 1px solid #EEEEEE;
       overflow: hidden;
       padding: 5px 3px;
-      line-height: 1.4em; }
-    #content #archive li a {
-      float: left; }
-    #content #archive li span {
+      line-height: 1.4em;
+    }
+
+    li a {
+      float: left;
+    }
+
+    li span {
       float: right;
-      color: #CCCCCC; }
+      color: #CCCCCC;
+    }
+  }
+}
