@@ -3,7 +3,7 @@
  <title>Matte Noble</title>
  <link href="http://mattenoble.com/atom.xml" rel="self"/>
  <link href="http://mattenoble.com/"/>
- <updated>2012-09-30T21:59:58-04:00</updated>
+ <updated>2013-08-10T14:35:12-07:00</updated>
  <id>http://mattenoble.com/</id>
  <author>
    <name>Matte Noble</name>
@@ -11,195 +11,111 @@
  </author>
  
    <entry>
-     <title>CSSTree - An ultra-simple CSS parser</title>
-     <link href="http://mattenoble.com/2011/08/20/csstree-an-ultra-simple-css-parser/"/>
-     <updated>2011-08-20T00:00:00-04:00</updated>
-     <id>http://mattenoble.com/2011/08/20/csstree-an-ultra-simple-css-parser</id>
-     <content type="html">&lt;p&gt;I needed something to parse a bunch of &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; and gave me a manipulatable object. I tried a couple parsers and none of them worked. It wasn&amp;#8217;t that they didn&amp;#8217;t do everything I needed, they just flat out didn&amp;#8217;t work at all.&lt;/p&gt;
-&lt;p&gt;So then I made &lt;a href=&quot;https://github.com/mnoble/csstree&quot;&gt;CSSTree&lt;/a&gt;. It&amp;#8217;s dead-simple and does next to nothing. Other than parsing &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; that is.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;tree&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CSSTree&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;body { color: #000000; }&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# =&amp;gt; #&amp;lt;CSSTree:0x000000&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;tree&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;body&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# =&amp;gt; &amp;quot;#000000&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;tree&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;body&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;margin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;10px&amp;quot;&lt;/span&gt; 
-&lt;span class=&quot;c1&quot;&gt;# =&amp;gt; &amp;quot;10px&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;tree&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;render&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# =&amp;gt; &amp;quot;body { color: #000000; margin: 10px; }&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;&lt;p&gt;And that&amp;#8217;s pretty much it. Go team!&lt;/p&gt;</content>
-   </entry>
- 
-   <entry>
-     <title>Ruby Enumerables</title>
-     <link href="http://mattenoble.com/2011/05/30/ruby-enumerables/"/>
-     <updated>2011-05-30T00:00:00-04:00</updated>
-     <id>http://mattenoble.com/2011/05/30/ruby-enumerables</id>
-     <content type="html">&lt;p&gt;If you&amp;#8217;re writing any type of &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; client library, you&amp;#8217;ll probably need some sort of Collection class that&amp;#8217;s iterable. It&amp;#8217;s quite simple, but pretty powerful; most things in Ruby are.&lt;/p&gt;
-&lt;h3&gt;It&amp;#8217;s All About Each&lt;/h3&gt;
-&lt;p&gt;The Ruby stdlib has this handy module named &lt;code&gt;Enumerable&lt;/code&gt;. It basically means that if you mix it into a class which responds to &lt;code&gt;each&lt;/code&gt;, you get all the fanciness that is &lt;code&gt;select&lt;/code&gt;, &lt;code&gt;map&lt;/code&gt;, &lt;code&gt;all?&lt;/code&gt;, etc.&lt;/p&gt;
-&lt;p&gt;This sounded odd to me at first. How would implementing the method you use to iterate an object&amp;#8230; make it iterable? It only feels weird because we&amp;#8217;re used to &lt;code&gt;each&lt;/code&gt; being an interface, not an implementation. It plays both roles!&lt;/p&gt;
-&lt;h3&gt;An Egg Sample&lt;/h3&gt;
-&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
-&lt;p&gt;Now whenever you create a Carton object with a bunch of eggs, you&amp;#8217;ll be able to iterate over those eggs one at a time. The eggs themselves can live in an Array, Hash, whatever. The important thing is to yield them one at a time via &lt;code&gt;each&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;With the above code, a Carton object can now do everything any other enumerable object can, but with the added bonus of breaking all over the fucking parking lot&amp;#8230;&lt;/p&gt;</content>
-   </entry>
- 
-   <entry>
-     <title>Tabby - iTerm2 Environments</title>
-     <link href="http://mattenoble.com/2011/05/12/tabby/"/>
-     <updated>2011-05-12T00:00:00-04:00</updated>
-     <id>http://mattenoble.com/2011/05/12/tabby</id>
-     <content type="html">&lt;p&gt;If you&amp;#8217;ve ever created a Jekyll site with, say, &lt;span class=&quot;caps&quot;&gt;SASS&lt;/span&gt; and Coffeescript,&lt;br /&gt;
-you know how annoying it is to set up your terminal environment every time. Open a tab, cd to your project, open a new tab, &lt;code&gt;jekyll --server --auto&lt;/code&gt;, open yet another tab, cd to your project, &lt;code&gt;sass --watch whatever.sass:whatever.css&lt;/code&gt;, etc.&lt;/p&gt;
-&lt;p&gt;I got tired of doing that multiple times per day, week, whatever. And so, &lt;a href=&quot;https://github.com/mnoble/tabby&quot;&gt;Tabby&lt;/a&gt; was born.&lt;/p&gt;
-&lt;p&gt;I created Tabby for two purposes, first to solve the problem described above and second, to play around with the idea of pure Ruby configuration. There&amp;#8217;s no crazy &lt;span class=&quot;caps&quot;&gt;DSL&lt;/span&gt; (sorta), no &lt;span class=&quot;caps&quot;&gt;YAML&lt;/span&gt;, no hassle; just Ruby in all it&amp;#8217;s glory.&lt;/p&gt;
-&lt;h3&gt;A Quick Tutorial&lt;/h3&gt;
-&lt;p&gt;With Tabby, you set up &lt;em&gt;Projects&lt;/em&gt;. Projects are just collections of iTerm2 tabs and what each one runs. Let&amp;#8217;s walk through creating my blog environment. First, create the project:&lt;/p&gt;
-&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
-&lt;p&gt;This will open up your new project in whatever you have &lt;code&gt;$EDITOR&lt;/code&gt; set to. Tabby assumes you use &lt;code&gt;~/Dev&lt;/code&gt; as your project directory because, well frankly, I do. It gives you a skeleton for your project right off the bat:&lt;/p&gt;
-&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;basedir&lt;/code&gt; is the root of your project. Tabby takes each method in your project class and makes it a tab. The tab gets the name of the method. So above, we&amp;#8217;d have a tab created and titled &amp;#8220;server&amp;#8221;. It would immediately run &lt;code&gt;rails s&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Since we&amp;#8217;re making a Jekyll blog, we can get rid of the Rails tab. We do want to have the Jekyll server running though and also &lt;span class=&quot;caps&quot;&gt;SASS&lt;/span&gt; and Coffeescript.&lt;/p&gt;
-&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
-&lt;p&gt;So now every time you go to work on your blog, just kick it off with:&lt;/p&gt;
-&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
-&lt;p&gt;and you&amp;#8217;ll get:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/public/images/tabby.jpg&quot; title=&quot;tabby blog environment&quot; alt=&quot;tabby blog environment&quot; /&gt;&lt;/p&gt;
-&lt;h3&gt;Usage&lt;/h3&gt;
-&lt;p&gt;Here&amp;#8217;s a quick run down of the other commands, straight from the horse&amp;#8217;s mouth:&lt;/p&gt;
-&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;</content>
-   </entry>
- 
-   <entry>
-     <title>The Value of I Don't Know</title>
-     <link href="http://mattenoble.com/2011/05/11/the-value-of-i-dont-know/"/>
-     <updated>2011-05-11T00:00:00-04:00</updated>
-     <id>http://mattenoble.com/2011/05/11/the-value-of-i-dont-know</id>
-     <content type="html">&lt;p&gt;&amp;#8220;I don&amp;#8217;t know&amp;#8221; is one of the most powerful things you can say in my opinion. I don&amp;#8217;t mean using it when you just don&amp;#8217;t feel like talking, I mean when you truly do not understand something.&lt;/p&gt;
-&lt;p&gt;I think people feel weak or inferior when they don&amp;#8217;t understand something and the rest of the group does. No one wants to be left out. It&amp;#8217;s especially bad in an industry full of very smart people, solving very challenging problems, like we have in Software Development. You&amp;#8217;re talking with your team of ten and every one is on the same page except you; it&amp;#8217;s frightening!&lt;/p&gt;
-&lt;p&gt;Saying I don&amp;#8217;t know is a true sign of strength though. Admitting to a group of people that you don&amp;#8217;t understand something takes guts. It also takes brains. Wait, it takes brains to admit your brain doesn&amp;#8217;t know something. That doesn&amp;#8217;t make sense. &lt;strong&gt;Wrong sir!&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/public/images/wrong.jpg&quot; title=&quot;Wrong sir&quot; alt=&quot;Wrong sir&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;It makes perfect sense. When you admit you don&amp;#8217;t know something to a group of people, you&amp;#8217;re essentially making an informal pact with them to figure it out. You&amp;#8217;re also not feeding them false information, which is always a good thing. Unless your a double-agent.&lt;/p&gt;
-&lt;p&gt;Anyway, the point is, don&amp;#8217;t be afraid to admit you don&amp;#8217;t know something. Some people may come down on you for it, but fuck them. Be honest, be sincere and acknowledge when you have something to learn. That&amp;#8217;s how you improve, right?&lt;/p&gt;</content>
-   </entry>
- 
-   <entry>
-     <title>Blocky RSpec Stubbing</title>
-     <link href="http://mattenoble.com/2011/04/24/deferred-return-values-for-rspec-stubs/"/>
-     <updated>2011-04-24T00:00:00-04:00</updated>
-     <id>http://mattenoble.com/2011/04/24/deferred-return-values-for-rspec-stubs</id>
-     <content type="html">&lt;p&gt;While working on &lt;a href=&quot;http://github.com/mnoble/tabby&quot;&gt;Tabby&lt;/a&gt; I hit an issue when stubbing Tempfile.new. Instead of creating a Tempfile I wanted to just use a StringIO-ish (&lt;code&gt;FakeFile&lt;/code&gt;) object so I didn&amp;#8217;t write to the filesystem.&lt;/p&gt;
-&lt;h3&gt;The Problem&lt;/h3&gt;
-&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
-&lt;p&gt;The problem is that Tabby creates a new Tempfile for every tab it needs to make, meaning it can be multiple times depending on the setup.&lt;/p&gt;
-&lt;p&gt;So one of the setups in my tests has two tabs. For the first tab, my FakeFile object was opened, written to and closed. The next tab did the same, to that same exact FakeFile instance. Since it was already closed, I got &lt;code&gt;IOError: not opened for writing&lt;/code&gt;. Lame.&lt;/p&gt;
-&lt;h3&gt;The Solution&lt;/h3&gt;
-&lt;p&gt;RSpec&amp;#8217;s &lt;code&gt;and_returns&lt;/code&gt; takes a block, that is evaluated when the stubbed method is called. This way it&amp;#8217;s invoked from a different context each time, giving us a brand new FakeFile each time.&lt;/p&gt;
-&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
-&lt;p&gt;So if you have a stub that needs to return the same type of object, but a brand spank&amp;#8217;n new instance of it each time, use a block.&lt;/p&gt;</content>
-   </entry>
- 
-   <entry>
-     <title>Taking Care of Business</title>
-     <link href="http://mattenoble.com/2011/04/02/value-of-it-just-working/"/>
-     <updated>2011-04-02T00:00:00-04:00</updated>
-     <id>http://mattenoble.com/2011/04/02/value-of-it-just-working</id>
-     <content type="html">&lt;p&gt;One of the many things I love about the Ruby community is the notion that things should &amp;#8220;just work&amp;#8221; out of the box. I&amp;#8217;m sure it&amp;#8217;s in part due to Rails&amp;#8217; convention over configuration mentality, but I think it&amp;#8217;s more than that.&lt;/p&gt;
-&lt;p&gt;During the day I wear skin tight, rockstar style snake skin pants. If you aren&amp;#8217;t picking up on my odd, far-reaching metaphor, I mean I write Python code. Anyway, it may just be a lack of experience in the community but things seem infinitely more complicated to get up and running than when I&amp;#8217;m working with Ruby. It just feels like there is more between me and the end goal.&lt;/p&gt;
-&lt;p&gt;Here&amp;#8217;s a few of my favorite pieces of &amp;#8220;just works&amp;#8221; Ruby software:&lt;/p&gt;
-&lt;h3&gt;Devise&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;rails g devise:install&lt;/code&gt; and &lt;code&gt;rails g devise user&lt;/code&gt; Done. You&amp;#8217;ve got a sign in page, a user model, migration and all the goodness. I just wrote the steps for adding authentication to an app in a single sentence. That&amp;#8217;s incredible.&lt;/p&gt;
-&lt;h3&gt;Heroku&lt;/h3&gt;
-&lt;p&gt;Heroku is another great example that literally takes seconds to get up and running with. &lt;code&gt;rails new blog&lt;/code&gt;, &lt;code&gt;heroku create&lt;/code&gt;, &lt;code&gt;git push heroku master&lt;/code&gt;. Done &amp;amp; done. Application deployed and online.&lt;/p&gt;
-&lt;h3&gt;Rubygems&lt;/h3&gt;
-&lt;p&gt;So you have a gem you want to make available to the world? Simple, &lt;code&gt;gem build whatever.gemspec&lt;/code&gt; and &lt;code&gt;gem push whatever-0.0.1.gem&lt;/code&gt;. Done. Granted, I do know this one has a Python equivalent. &lt;code&gt;python setup.py register&lt;/code&gt; claims to get you the same, but my recent attempts have all failed with, &amp;#8220;You are not allowed to store &amp;#8216;whatever&amp;#8217; package information&amp;#8221;. Okay.. so.. what now?&lt;/p&gt;
-&lt;p&gt;Tools are an important part of any developers day to day life. I think tools are partially why Ruby developers are typically quite productive. We see the value in good development tools and we spend time crafting them to &amp;#8220;just work&amp;#8221;.&lt;/p&gt;
-&lt;p&gt;This is only one of the many things I admire about the Ruby community, but it&amp;#8217;s an important one. Having efficient tools helps make an efficient developer.&lt;/p&gt;</content>
-   </entry>
- 
-   <entry>
-     <title>Test and Design Driven Development</title>
-     <link href="http://mattenoble.com/2011/03/30/TADDD/"/>
-     <updated>2011-03-30T00:00:00-04:00</updated>
-     <id>http://mattenoble.com/2011/03/30/TADDD</id>
-     <content type="html">&lt;p&gt;For quite some time the way I&amp;#8217;ve worked was to develop the application as if the interface didn&amp;#8217;t matter, until it was done. Write my features, tests, etc and then when you have a functioning 1.0, slap some pretty on it. It always felt wrong, it felt unfair to the application.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://rubylearning.com/blog/2010/10/05/outside-in-development/&quot;&gt;Outside-In Development&lt;/a&gt; is pretty awesome but while it ends up being great for features and application code, it didn&amp;#8217;t seem right for mixing in some design work. I&amp;#8217;ve altered the my general, outside-in, workflow to include some design time. Here&amp;#8217;s how it goes..&lt;/p&gt;
-&lt;h3&gt;Cucumber&lt;/h3&gt;
-&lt;p&gt;Write a feature; keep it high level and based on value (you already know this though). Lets say you&amp;#8217;re working on the Authentication portion of your application. You want to make sure when a user signs in, they are greeted with the message &amp;#8220;Hey there!&amp;#8221;.&lt;/p&gt;
-&lt;h3&gt;RSpec, MiniTest, etc.&lt;/h3&gt;
-&lt;p&gt;Write some controller and model tests to get rolling with the lower level login stuff. Let&amp;#8217;s pretend you just did that. A user can sign in and they will in fact see &amp;#8220;Hey there!&amp;#8221;. That&amp;#8217;s awesome, nice work. Except&amp;#8230;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/public/images/taddd/crap-login.jpg&quot; title=&quot;ugly login screen&quot; alt=&quot;ugly login screen&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;Gross. You could leave it like this for the time being and move on to other features if you so incline. I, however, can not do that anymore. Having a functioning app with a lame UI sounds as bad as having no app at all to me.&lt;/p&gt;
-&lt;h3&gt;Design&lt;/h3&gt;
-&lt;p&gt;At this point, it&amp;#8217;s time to put a little shine on your application. If you&amp;#8217;re not doing both design and development you could probably even &amp;#8220;get lean&amp;#8221; here and send a &amp;#8220;card&amp;#8221; downstream to a designer. Hmm, &lt;code&gt;article_ideas += 1&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Anyway, now that we know we have a reliable test suite for this feature, start playing with the UI. With all the cool things available these days like &lt;span class=&quot;caps&quot;&gt;SASS&lt;/span&gt;, Compass, Haml, etc. this step should be fast and easy, even without Photoshop.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/public/images/taddd/nice-login.jpg&quot; title=&quot;pretty login screen&quot; alt=&quot;pretty login screen&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;So now you have a well tested, functional and quite attractive sign in feature. The cool thing about this approach is that it integrates really well with the normal red, green, refactor methodology. This won&amp;#8217;t be the last sign in feature you write, most likely, so every new one is a chance to not only refactor your code, but also the design.&lt;/p&gt;
-&lt;p&gt;So if you&amp;#8217;re a designer/developer hybrid or are tasked to doing both, try this out. It&amp;#8217;s helped me get that abstract vision for things into a clearer light, which is always a good thing.&lt;/p&gt;</content>
-   </entry>
- 
-   <entry>
-     <title>Forge - Python Fixture Replacement</title>
-     <link href="http://mattenoble.com/2011/03/22/forge-python-fixture-replacement/"/>
-     <updated>2011-03-22T00:00:00-04:00</updated>
-     <id>http://mattenoble.com/2011/03/22/forge-python-fixture-replacement</id>
-     <content type="html">&lt;p&gt;I found myself wanting a simple way to create objects with fake data for unit tests, in Python. I always liked &lt;a href=&quot;https://github.com/thoughtbot/factory_girl&quot;&gt;factory_girl&lt;/a&gt; and the way it keeps things clean and coherent. However, Ruby libraries were no help to me here, directly at least, I needed a Python solution.&lt;/p&gt;
-&lt;p&gt;I wanted something that wasn&amp;#8217;t fixtures. First of all, I don&amp;#8217;t think you should need a database to run unit tests. If you&amp;#8217;re writing simple, modular code you should be able to give input and test output. So my answer to that need is &lt;a href=&quot;https://github.com/mnoble/forge&quot;&gt;Forge&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Forge is a very simple object creator loosely based on factory_girl. You define factories and then you build them. What I really like about this approach is that it makes your intent quite obvious. Testing something to with a confirmed user? &lt;code&gt;confirmed_user = Forge('confirmed_user')&lt;/code&gt;. Simple, clean and easy to follow.&lt;/p&gt;
-&lt;p&gt;If you&amp;#8217;re familiar with factory_girl at all, this will be nothing new for you. For those of you who aren&amp;#8217;t, here&amp;#8217;s a quick rundown on how to use Forge.&lt;/p&gt;
-&lt;h3&gt;Defining Factories&lt;/h3&gt;
-&lt;p&gt;First create a &lt;code&gt;project/test/factories&lt;/code&gt; directory. You can either define all your factories in the &lt;code&gt;__init__.py&lt;/code&gt; file or in separate files then import them in &lt;code&gt;__init__.py&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
-&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
-&lt;h3&gt;Building Forged Objects&lt;/h3&gt;
-&lt;p&gt;So now that you have a bank of factories for the different scenarios you&amp;#8217;re testing. Time to get down to business. The &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; for creating factory objects mimics factory_girl&amp;#8217;s:&lt;/p&gt;
-&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
-&lt;p&gt;Unlike factory_girl, Forge will never put your objects into the database. It doesn&amp;#8217;t even know how.&lt;/p&gt;
-&lt;h3&gt;Using Models&lt;/h3&gt;
-&lt;p&gt;When you&amp;#8217;re working with an &lt;span class=&quot;caps&quot;&gt;ORM&lt;/span&gt; you usually want objects that are as close to what it returns from a database query. Most of the time this is just achieved by instantiating a model class with your factory data. And that is exactly what Forge does. You can configure Forge to use a specific module to retrieve models from:&lt;/p&gt;
-&lt;p&gt;Liquid error: Output for xhtml in clouds style is not yet implemented&lt;/p&gt;
-&lt;p&gt;Now, when you try to build a &lt;code&gt;user&lt;/code&gt; factory, it will try to import &lt;code&gt;project.models.User&lt;/code&gt;. If it exists, it will create an instance of it and apply the factory data to it. As long as your model&amp;#8217;s constructor takes &lt;code&gt;**kwargs&lt;/code&gt; of attributes, Forge should work just fine.&lt;/p&gt;
-&lt;h3&gt;Wrap Up&lt;/h3&gt;
-&lt;p&gt;Forge isn&amp;#8217;t anything fancy, but it provides a uniform way to define and create real objects for tests. It keeps things organized, the intent clear and works out of the box. If you find yourself wanting to ditch the database in your unit tests, check it out.&lt;/p&gt;</content>
-   </entry>
- 
-   <entry>
-     <title>A Developer's Introduction to Puppet</title>
-     <link href="http://mattenoble.com/2011/02/08/a-developers-introduction-to-puppet/"/>
-     <updated>2011-02-08T00:00:00-05:00</updated>
-     <id>http://mattenoble.com/2011/02/08/a-developers-introduction-to-puppet</id>
-     <content type="html">&lt;p&gt;&lt;img src=&quot;/public/images/sock-puppet.jpg&quot; class=&quot;right&quot; title=&quot;Puppet&quot; alt=&quot;Puppet&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.puppetlabs.com/puppet/introduction/&quot;&gt;Puppet&lt;/a&gt; is one of those things most Rubyists have probably heard of, but few know very well. I&amp;#8217;ve recently started using it in conjunction with Vagrant and found myself wanting a consolidated explanation of it&amp;#8217;s components. So, here it is!&lt;/p&gt;
-&lt;h3&gt;Nodes&lt;/h3&gt;
-&lt;p&gt;A node represents a specific type of machine. It defines how, and with what, that type of server gets provisioned. Examples nodes would be like a web server, a mail server or an &lt;span class=&quot;caps&quot;&gt;LDAP&lt;/span&gt; server.&lt;/p&gt;
-&lt;h3&gt;Modules&lt;/h3&gt;
-&lt;p&gt;Puppet modules are much like Ruby modules. They&amp;#8217;re an organization tool which DRYs up your Puppet configs. Modules contain Classes, Templates, Files, etc. The Puppet site explains it well:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Modules are reusable, sharable units of Puppet code. They can automate tasks such as setting up a database, web server, or mail server.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3&gt;Classes&lt;/h3&gt;
-&lt;p&gt;Classes are the actual unit you can include into &lt;em&gt;nodes&lt;/em&gt; or even other classes. Classes support a simplified type of inheritance. Say you want to use nginx as a web server one place, but as a proxy another. You&amp;#8217;d have a base class, &lt;code&gt;nginx&lt;/code&gt;, then a &lt;code&gt;nginx::proxy&lt;/code&gt; class which modifies the base to act as a proxy server.&lt;/p&gt;
-&lt;h3&gt;Resources&lt;/h3&gt;
-&lt;p&gt;Resources are what classes contain. They&amp;#8217;re a single item that is part of the overall configuration of a class. Take our &lt;code&gt;nginx&lt;/code&gt; example above, to provision nginx on a machine we need a couple things. We need to ensure the package is installed, we want to make sure the service is running and we&amp;#8217;d like to define a custom &lt;code&gt;nginx.conf&lt;/code&gt;. These would all be resource definitions.&lt;/p&gt;
-&lt;h3&gt;Templates&lt;/h3&gt;
-&lt;p&gt;Templates are any file you want to put on the machine being provisioned. This can range from a &lt;code&gt;nginx.conf&lt;/code&gt; file to &lt;code&gt;/etc/hosts&lt;/code&gt;. You can include dynamic data by specifying class variables in your.. you guessed it, classes! These files are just &lt;em&gt;erb&lt;/em&gt; so any normal Ruby goes.&lt;/p&gt;
-&lt;h3&gt;Just the Surface&lt;/h3&gt;
-&lt;p&gt;This is a very, very basic overview of Puppet. It&amp;#8217;s an extremely powerful platform that can really make your life easier. I didn&amp;#8217;t cover any examples of the Puppet &lt;span class=&quot;caps&quot;&gt;DSL&lt;/span&gt; on purpose, I want this to just be a basic primer to Puppet&amp;#8217;s concepts.&lt;/p&gt;
-&lt;p&gt;Check out &lt;a href=&quot;http://docs.puppetlabs.com/&quot;&gt;Puppet Labs&amp;#8217; Documentation&lt;/a&gt; for more information. Also, take a look into their &lt;a href=&quot;http://forge.puppetlabs.com/&quot;&gt;Module Forge&lt;/a&gt; for preexisting modules you can use right now, with barely any work.&lt;/p&gt;</content>
-   </entry>
- 
-   <entry>
-     <title>New Year, New Site</title>
-     <link href="http://mattenoble.com/2011/01/18/new-year-new-site/"/>
-     <updated>2011-01-18T00:00:00-05:00</updated>
-     <id>http://mattenoble.com/2011/01/18/new-year-new-site</id>
-     <content type="html">&lt;p&gt;As cliche as it may be, I&amp;#8217;ve set a New Years resolution for myself; consistently update content on this blog.&lt;/p&gt;
-&lt;p&gt;I&amp;#8217;ve wanted to resurrect this site for quite some time, but never got around to it. That is changing. I read an &lt;a href=&quot;http://timeless.judofyr.net/your-blog-is-a-project&quot;&gt;interesting article&lt;/a&gt; recently that gave me some good ideas. A blog is very much like any other project and I&amp;#8217;m going to start treating it like one.&lt;/p&gt;
-&lt;p&gt;When I&amp;#8217;m designing, developing, writing, whatever, something that&amp;#8217;s going to be public or seen by others, I obsess over every small detail. I need to take a more iterative approach to everything. Things don&amp;#8217;t have to be perfect in their first incarnation. Or any incarnation for that matter.&lt;/p&gt;
-&lt;h3&gt;The Approach&lt;/h3&gt;
-&lt;p&gt;I&amp;#8217;m going to set up an issue tracker for article ideas, issues, etc. I&amp;#8217;m also going to start carry around a pocket journal to write down ideas throughout the day.&lt;/p&gt;
-&lt;h3&gt;Comments&lt;/h3&gt;
-&lt;p&gt;There will be no comments on this blog directly, at least initially. If there&amp;#8217;s enough interest in the future I&amp;#8217;ll add them, but for the time being they aren&amp;#8217;t needed. Until then, I&amp;#8217;ll let sites like Rubyflow and HackerNews support those conversations for me.&lt;/p&gt;</content>
+     <title>WeMo Hacking</title>
+     <link href="http://mattenoble.com/2013/08/07/wemo-hacking/"/>
+     <updated>2013-08-07T00:00:00-07:00</updated>
+     <id>http://mattenoble.com/2013/08/07/wemo-hacking</id>
+     <content type="html">&lt;p&gt;I recently got my hands on a Belkin WeMo and decided to put together a
+web based version of their control panel. For the unaware, the device is
+just essentially an outlet you can control via UPnP. &quot;Control&quot; mostly
+means turning it on and off.&lt;/p&gt;
+
+&lt;h2&gt;Finding Devices&lt;/h2&gt;
+
+&lt;p&gt;You can find all the devices currently connected to your network using
+this library: &lt;a href=&quot;https://github.com/turboladen/upnp&quot;&gt;https://github.com/turboladen/upnp&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;ss&quot;&gt;UPnP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:SSDP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;urn:Belkin:device:controllee:1&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You&#39;ll get back a list of Belkin devices and more importantly, their ip
+address. That&#39;s found in the &lt;code&gt;:location&lt;/code&gt; attribute.&lt;/p&gt;
+
+&lt;h2&gt;Services&lt;/h2&gt;
+
+&lt;p&gt;You can use that &lt;code&gt;:location&lt;/code&gt; from above to get all the services
+available, but we&#39;re just going to talk about the one we really care
+about, &lt;code&gt;basicevent&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;It&#39;s located at &lt;code&gt;/upnp/control/basicevent1&lt;/code&gt; and has an identifier of
+&lt;code&gt;urn:Belkin:service:basicevent:1&lt;/code&gt;. The identifier becomes relevant when
+constructing actions.&lt;/p&gt;
+
+&lt;h2&gt;Actions&lt;/h2&gt;
+
+&lt;p&gt;Each Service exposes a bunch of actions. Since this is SOAP, an action
+is basically a method. The two we care about are &lt;code&gt;GetBinaryState&lt;/code&gt; and
+&lt;code&gt;SetBinaryState&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Binary State is how the WeMo describes whether it&#39;s on or off. 1 means
+on and 0 means off &amp;mdash; makes sense.&lt;/p&gt;
+
+&lt;h3&gt;GetBinaryState &lt;small&gt;Is the WeMo on or off?&lt;/small&gt;&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&amp;gt; POST http://10.0.0.11:49153/upnp/control/basicevent1 HTTP/1.1
+&amp;gt; Content-type: text/xml; &lt;span class=&quot;nv&quot;&gt;charset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt;
+&amp;gt; SOAPACTION: &lt;span class=&quot;s2&quot;&gt;&amp;quot;urn:Belkin:service:basicevent:1#GetBinaryState&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Request body --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;s:Envelope&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:s=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://schemas.xmlsoap.org/soap/envelope/&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;s:encodingStyle=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://schemas.xmlsoap.org/soap/encoding/&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;s:Body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;u:GetBinaryState&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:u=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;urn:Belkin:service:basicevent:1&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/u:GetBinaryState&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/s:Body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/s:Envelope&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Response body --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;s:Envelope&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:s=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://schemas.xmlsoap.org/soap/envelope/&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;s:encodingStyle=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://schemas.xmlsoap.org/soap/encoding/&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;s:Body&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;u:GetBinaryStateResponse&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:u=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;urn:Belkin:service:basicevent:1&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+     &lt;span class=&quot;nt&quot;&gt;&amp;lt;BinaryState&amp;gt;&lt;/span&gt;0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/BinaryState&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/u:GetBinaryStateResponse&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;/s:Body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/s:Envelope&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;SetBinaryState &lt;small&gt;Turning the WeMo on and off&lt;/small&gt;&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&amp;gt; POST http://10.0.0.11:49153/upnp/control/basicevent1 HTTP/1.1
+&amp;gt; Content-type: text/xml; &lt;span class=&quot;nv&quot;&gt;charset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt;
+&amp;gt; SOAPACTION: &lt;span class=&quot;s2&quot;&gt;&amp;quot;urn:Belkin:service:basicevent:1#SetBinaryState&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;xml&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Request body --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;s:Envelope&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:s=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://schemas.xmlsoap.org/soap/envelope/&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;s:encodingStyle=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://schemas.xmlsoap.org/soap/encoding/&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;s:Body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;u:SetBinaryState&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:u=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;urn:Belkin:service:basicevent:1&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;BinaryState&amp;gt;&lt;/span&gt;1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/BinaryState&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/u:SetBinaryState&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/s:Body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/s:Envelope&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Wrapup&lt;/h2&gt;
+
+&lt;p&gt;Controlling the device is actually pretty easy once you&#39;ve discovered
+the various services, actions and XML formats. The problem is that none
+of it&#39;s documented and there aren&#39;t any WSDLs. You just have to play around
+with the services, inspect the XML you get back, etc.&lt;/p&gt;
+
+&lt;p&gt;If you don&#39;t want to deal with all of this, you&#39;re in luck! I&#39;ve
+abstracted most of this into a sort of framework. It&#39;s just sitting in a
+little Sinatra app I wrote to control multiple WeMos. Extending it to
+use more services is pretty straight-forward.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/mnoble/wemo/tree/master/lib&quot;&gt;https://github.com/mnoble/wemo/tree/master/lib&lt;/a&gt;&lt;/p&gt;
+</content>
    </entry>
  
 </feed>

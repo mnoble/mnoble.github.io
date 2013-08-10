@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -9,9 +10,10 @@ body {
   color: #111111;
   font-family: Palatino, Georgia, serif;
   font-weight: normal;
-  font-size: 18px;
-  line-height: 1.7em;
-  padding: 10px;
+  font-size: 16px;
+  line-height: 1.6em;
+  padding: 0;
+  background: #EBEDF0;
 }
 
 a {
@@ -25,61 +27,111 @@ a:hover {
 
 #sidebar {
   float: left;
-  width: 144px;
+  width: 160px;
+  padding: 20px 30px;
+
+  & > a {
+    display: block;
+    text-align: center;
+  }
+
+  & > a img {
+    max-width: 100%;
+  }
 
   #meta {
-    width: 63px;
+    width: 71px;
     margin: 0 auto;
   }
 
   #meta a {
+    font-size: 20px;
     display: block;
     float: left;
-    width: 16px;
-    height: 16px;
-    margin-right: 5px;
-    text-indent: -9999px;
+    margin-right: 10px;
+    color: #000000;
   }
 
-  #meta a.github {
-    background: url("/public/images/github.png") no-repeat;
+  #meta a:last-child {
+    margin-right: 0;
   }
 
-  #meta a.twitter {
-    background: url("/public/images/twitter.png") no-repeat;
-  }
-
-  #meta a.rss {
-    background: url("/public/images/feed.png") no-repeat;
+  #meta a:hover {
+    text-decoration: none;
+    color: #227CE8;
   }
 }
 
 #content {
   float: left;
   width: 600px;
-  margin: 42px 0 0 25px;
+  padding: 30px 50px;
+  background: #FFFFFF;
+  border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.10);
 
-  h2 {
+  h1, h2, h3 {
     font-family: "junction-1", "junction-2", sans-serif;
     font-weight: normal;
+  }
+
+  h1 {
+    font-size: 24px;
+    color: #EB2027;
+  }
+
+  h2 {
     font-size:  24px;
+    margin-top: 20px;
+  }
+
+  h3 {
+    font-size:  18px;
+    margin-top: 20px;
+  }
+
+  h3 small {
+    color: #BBBBBB;
+  }
+
+  h3 small:before {
+    content: "\2014\00a0";
+  }
+
+  p {
+    margin-top: 20px;
+  }
+
+  code {
+    font-size: 14px;
+    padding: 2px 6px;
+    background: #F6F6F6;
+    border: 1px solid #F0F0F0;
   }
 
   .highlight {
-    font-family: Consolas, "Liberation Mono", Courier, monospace;
     font-size: 13px;
     line-height: 19px;
     background: #F8F8F8;
     padding: 6px 10px;
     margin: 1.7em 0;
     border: 1px solid #EEEEEE;
+    overflow-x: auto;
+
+    code {
+      font-family: Consolas, "Liberation Mono", Courier, monospace;
+      font-size: 13px;
+      padding: 0;
+      border: 0;
+    }
   }
 
   #archive {
     list-style: none;
     font-family: Helvetica, sans-serif;
     font-size: 12px;
-    margin-top: 25px;
+    margin: 25px 0;
 
     li {
       border-top: 1px solid #EEEEEE;
@@ -98,3 +150,99 @@ a:hover {
     }
   }
 }
+
+@mixin single-column {
+  body {
+    background: #FFFFFF;
+  }
+
+  #sidebar {
+    float: none;
+    width: 90%;
+    margin-top: 20px;
+    padding: 0 5% 20px 5%;
+  }
+
+  #sidebar #meta {
+    margin: 1em auto;
+    height: 24px !important;
+    line-height: none;
+  }
+
+  #sidebar #meta a {
+    display: block !important;
+    float: left !important;
+    font-size: 2em !important;
+    margin-right: 50px !important;
+  }
+
+  #sidebar #meta a:last-child {
+    margin-right: 0 !important;
+  }
+
+  #content {
+    box-shadow: none;
+    float: none;
+    width: 90%;
+    padding: 0 5%;
+  }
+
+  pre {
+    overflow-x: auto;
+  }
+
+  #archive li span {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  @include single-column;
+
+  body {
+    padding-top: 1em;
+  }
+
+  #sidebar #meta {
+    width: 192px !important;
+  }
+}
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px) {
+  @include single-column;
+
+  body, pre {
+    font-size: 3em;
+  }
+
+  pre {
+    line-height: 1.5em;
+  }
+
+  #sidebar {
+    width: 350px;
+    margin: 50px auto 0 auto;
+  }
+
+  #sidebar #meta {
+    display: block;
+    width: 7.3em !important;
+    margin: 0 auto 2em auto !important;
+  }
+
+  #content .article h2 {
+    font-size: 1.6em !important;
+  }
+
+  #archive {
+    margin-top: 100px !important;
+    font-size: inherit !important;
+  }
+
+  #archive li {
+    padding: 25px 0 !important;
+  }
+}
+

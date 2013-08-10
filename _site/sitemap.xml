@@ -2,61 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://mattenoble.com/2011/08/20/csstree-an-ultra-simple-css-parser/</loc>
-    <lastmod>2011-08-20</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mattenoble.com/2011/05/30/ruby-enumerables/</loc>
-    <lastmod>2011-05-30</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mattenoble.com/2011/05/12/tabby/</loc>
-    <lastmod>2011-05-12</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mattenoble.com/2011/05/11/the-value-of-i-dont-know/</loc>
-    <lastmod>2011-05-11</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mattenoble.com/2011/04/24/deferred-return-values-for-rspec-stubs/</loc>
-    <lastmod>2011-04-24</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mattenoble.com/2011/04/02/value-of-it-just-working/</loc>
-    <lastmod>2011-04-02</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mattenoble.com/2011/03/30/TADDD/</loc>
-    <lastmod>2011-03-30</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mattenoble.com/2011/03/22/forge-python-fixture-replacement/</loc>
-    <lastmod>2011-03-22</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mattenoble.com/2011/02/08/a-developers-introduction-to-puppet/</loc>
-    <lastmod>2011-02-08</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://mattenoble.com/2011/01/18/new-year-new-site/</loc>
-    <lastmod>2011-01-18</lastmod>
+    <loc>http://mattenoble.com/2013/08/07/wemo-hacking/</loc>
+    <lastmod>2013-08-07</lastmod>
   </url>
   
   <url>
     <loc>http://mattenoble.com/</loc>
-    <lastmod>2012-09-30</lastmod>
+    <lastmod>2013-08-10</lastmod>
   </url>
   <url>
     <loc>http://mattenoble.com/archive/</loc>
-    <lastmod>2012-09-30</lastmod>
+    <lastmod>2013-08-10</lastmod>
   </url>
 </urlset>

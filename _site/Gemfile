@@ -1,5 +1,4 @@
-source :rubygems
+source "https://rubygems.org"
+gem "jekyll"
+gem "rdiscount"
 gem "RedCloth"
-gem "spox-ultraviolet"
-gem "rack-jekyll"
-gem "jekyll-ultraviolet"

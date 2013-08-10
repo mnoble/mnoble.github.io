@@ -1,4 +1,5 @@
 permalink: pretty
 pygments: true
 paginate: 1
+markdown: rdiscount
 exclude: ["development", "config.ru", "_wip", "public/sass"]
