@@ -1,0 +1,105 @@
+---
+---
+
+body
+  background: #EBEDF0
+  color: #333333
+  padding: 2em 0
+
+img
+  max-width: 100%
+
+header
+  width: 18em
+  float: left
+  margin: 0 auto
+
+  img
+    width: 300px
+    display: block
+
+  nav
+    position: absolute
+    top: 1em
+    left: 1em
+
+    ul
+      list-style: none
+      margin: 0
+      padding: 0
+
+      li
+        display: inline
+        margin-right: 1em
+
+      a
+        color: #999999
+        text-decoration: none
+        font: 0.8em Helvetica, Arial, sans-serif
+
+        &:hover
+          color: #EB2027
+
+
+#content
+  overflow: hidden
+  width: 30em
+  float: left
+  margin: 0 auto
+  font-size: 1.3em
+  line-height: 1.6em
+
+  #articles
+    width: 100%
+    float: left
+    padding-left: 2%
+
+    h1, h2
+      font: 700 32px Lato, "Helvetica Neue", sans-serif
+      text-transform: uppercase
+      color: #000000
+      margin: 0 0 10px 0
+      padding: 0
+      line-height: 0.7em
+
+    time
+      font: 300 14px/28px Lato, "Helvetica Neue", sans-serif
+      color: #999999
+
+    p
+      width: 98%
+      margin: 0.625em 0
+      font: 400 20px/32px "Buenard", Georgia, Times, serif
+
+@media screen and (max-width: 800px)
+  header
+    margin: 0 auto
+    padding: 0
+
+    nav
+      position: relative
+      float: none
+      width: 150px
+      margin: 0 auto
+
+      ul
+        padding: 0
+
+    img
+      padding: 2em 0 1em 0
+
+  #content
+    width: 90%
+    padding: 1em
+    margin: 0 auto
+
+    #articles
+      float: none
+      margin: 0 auto
+      border: 0
+
+      h1
+        line-height: 1.2em
+
+
+

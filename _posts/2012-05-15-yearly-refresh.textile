@@ -1,0 +1,8 @@
+---
+layout: post
+title: The Yearly Refresh
+summary: Just about every year, I slightly redesign this site. I gain a refreshed motivation to write more and stay on top of it. Welcome to this year's refresh. Let's see how it goes.
+date: 2012-05-15
+---
+
+If I had a dollar for every time I relaunched this site with the intent to write more, I'd have three more dollars.
